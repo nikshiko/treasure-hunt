@@ -13,28 +13,31 @@
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
   <link rel="stylesheet" href="app.css">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 </head>
-<body ng-controller="rfContoller" class="container" style="background-color:#f6a828">
+<body ng-controller="rfController" class="container">
+<h1>Treasure Hunt</h1>
+<div ng-view>
+</div>
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
 
-   <registration-form/>
-  <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
 
+<!-- In production use:
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+-->
 
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-  -->
-
-   <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-   <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
-  <script src="scripts/app.js"></script>
-  <script src="scripts/Controllers/rf.js"></script>
-  <script src="scripts/Directives/rfDirective.js"></script>
-  <script src="scripts/Services/rfService.js"></script>
-  <link href="templates/rfTemplate.html"/>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-route/angular-route.min.js"></script>
+<script src="scripts/app.js"></script>
+<script src="scripts/Controllers/rf.js"></script>
+<script src="scripts/Controllers/homeController.js"></script>
+<script src="scripts/Directives/rfDirective.js"></script>
+<script src="scripts/Services/DataService.js"></script>
+<link href="templates/home.html"/>
+<link href="templates/rfTemplate.html"/>
 
 
 </body>
