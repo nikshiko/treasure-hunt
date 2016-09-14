@@ -1,0 +1,32 @@
+body {margin: 0;}
+
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #f8efc0;
+    border:1px solid #f0ad4e;
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+    display: block;
+    color: #8a6d3b;
+    text-align: center;
+    padding: 40px 16px;
+    text-decoration: none;
+    font-size:140%;
+}
+
+ul.topnav li a:hover:not(.active) {color: #f0ad4e;}
+
+ul.topnav li a.active {color: #000;}
+
+ul.topnav li.right {float: right;}
+
+@media screen and (max-width: 600px){
+    ul.topnav li.right,
+    ul.topnav li {float: none;}
+}
