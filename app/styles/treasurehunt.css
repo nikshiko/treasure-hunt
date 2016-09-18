@@ -154,6 +154,14 @@ body {
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
 }
+#img-caraousal{
+    margin:auto;
+    width: 100%;
+}
+#slides_control {
+
+    max-width:100%;
+}
 
  @keyframes carousel {
    			  from {border-color: #ff751a;} 

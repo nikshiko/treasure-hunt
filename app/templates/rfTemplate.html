@@ -4,31 +4,34 @@
     <span ><h3 class="modal-title" id="modal-title">Registration</h3></span>
 
 </div>
-<form class="form-horizontal" for="form">
+<form class="form-horizontal" for="form" name="registrationForm"  novalidate>
 <div class="modal-body" id="modal-body">
 
         <fieldset>
 
-            <div class="form-group">
+            <div class="form-group" ng-class="{'has-error':registrationForm.fullName.$invalid  && registrationForm.fullName.ng-touched}" >
           
                 <label for="fullName" class="col-sm-3 control-label">Name:</label>
                 <div class="col-sm-6" >
-                    <input type="text" class="form-control" id="fullName" aria-describedby="Namehelp" placeholder="Your Name"
-                           ng-model="editableEmployee.fullName" />
-                    <small id="Namehelp" class="form-text text-muted">Enter your full name.</small>
+                    <input type="text" class="form-control" id="fullName" name="fullName" aria-describedby="Namehelp" placeholder="Your Name"
+                           ng-model="editableEmployee.fullName" required />
+
+
                 </div>
             </div>
-            <div class="form-group">
-                <label for="exampleInputEmail1" class="col-sm-3 control-label">Email address:</label>
+            <div class="form-group"  ng-class="{'has-error':registrationForm.colleagueEmail.$invalid && registrationForm.colleagueEmail.$touched}">
+                <label for="colleagueEmail" class="col-sm-3 control-label">Email address:</label>
                 <div class="col-sm-6">
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"
-                           ng-model="editableEmployee.email">
+                    <input type="email" class="form-control" name="colleagueEmail" id="colleagueEmail" aria-describedby="emailHelp" placeholder="Enter email"
+                           ng-model="editableEmployee.email" required >
+                    <span ng-show="registrationForm.colleagueEmail.$invalid && registrationForm.colleagueEmail.$touched">Email required!</span>
                 </div>
             </div>
-            <div class="form-group">
-                <label class="col-sm-3 control-label" for="exampleInputPassword1">Password</label>
+            <div class="form-group"  ng-class="{'has-error':registrationForm.colleaguePassword.$invalid && registrationForm.colleaguePassword.$touched}">
+                <label class="col-sm-3 control-label" for="colleaguePassword">Password</label>
                 <div class="col-sm-6">
-                    <input  type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <input  type="password" name="colleaguePassword" class="form-control" id="colleaguePassword" placeholder="Password" ng-model="editableEmployee.password" required>
+                    <span ng-show="registrationForm.colleaguePassword.$invalid && registrationForm.colleaguePassword.$touched">Password required!</span>
                 </div>
             </div>
 
@@ -37,9 +40,10 @@
 
 </div>
 <div class="modal-footer">
-    <button class="btn btn-warning" type="button" ng-click="cancelForm()">Cancel</button>
+    <button class="btn btn-default" type="button" ng-click="cancelForm()">Cancel</button>
     <button class="btn btn-primary" type="submit" ng-click="submitForm()">Submit</button>
+    <button class="btn btn-warning" type="reset" ng-click="resetForm()">Reset</button>
 </div>
 </form>
-</script>
+
 

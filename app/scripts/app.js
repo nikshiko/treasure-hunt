@@ -13,6 +13,19 @@ myApp.config(function($routeProvider){
             templateUrl:"templates/home.html",
             controller:"homeController"
         })
+        .when("/Level2",{
+            templateUrl:"templates/level2.html",
+            controller:"level1Controller"
+            })
+        .when("/Level3",{
+            templateUrl:"templates/level3.html",
+            controller:"level1Controller"
+            })
+         .when("/Level4",{
+                templateUrl:"templates/level4.html",
+                controller:"level1Controller"
+            })
+
 
         .otherwise({
             redirectTo:"/home"

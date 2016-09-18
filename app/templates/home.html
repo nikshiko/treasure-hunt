@@ -1,54 +1,66 @@
-
-
-
 <div id="scrollArea" ng-controller="ScrollCtrl">
-<!--<ul class="topnav">
-    <li><img ng-src="images/ignite_colour_hires.png" style="height:100px;width:300px;"/></li>
-    <li><a class="active" href="#home">Home</a></li>
-    <li><a href="#contact" ng-click="showRegistrationForm()">Register</a></li>
-    <li class="right"><a href="#about">About</a></li>
-</ul>-->
-<nav class="navbar navbar-default navbar-fixed-top" >
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#myPage" ><span><img style="height:50px;width:100px;margin-top:-20%" ng-src="images/ignite_white_hires.png"/></span></a>
+    <!--<ul class="topnav">
+        <li><img ng-src="images/ignite_colour_hires.png" style="height:100px;width:300px;"/></li>
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#contact" ng-click="showRegistrationForm()">Register</a></li>
+        <li class="right"><a href="#about">About</a></li>
+    </ul>-->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#myPage"><span><img style="height:50px;width:100px;margin-top:-20%"
+                                                                ng-src="images/ignite_white_hires.png"/></span></a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a ng-click="gotoElement('about')">ABOUT</a></li>
+                    <li><a ng-click="gotoElement('guidelines')">GUIDELINES</a></li>
+                    <li><a ng-click="gotoElement('register')">REGISTER</a></li>
+                    <li><a ng-click="gotoElement('contact')">CONTACT</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a ng-click="gotoElement('about')">ABOUT</a></li>
-                <li><a ng-click="gotoElement('guidelines')">GUIDELINES</a></li>
-                <li><a ng-click="gotoElement('register')">REGISTER</a></li>
-                <li><a ng-click="gotoElement('contact')">CONTACT</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
+    </nav>
 
-<!--Carousel container-->
+    <!--Carousel container-->
     <div class="page-header " style="border-bottom-color:white;">
-        <br><br> <img class="img-responsive center-block imgslide" ng-src="images/ignite_colour_hires.png" width="300" height="100" >
+        <br><br> <img class="img-responsive center-block imgslide" ng-src="images/ignite_colour_hires.png" width="300"
+                      height="100">
+    </div>
+
+    <div ng-controller="carousalController" id="slides_control">
+        <div>
+            <carousel interval="myInterval">
+                <slide ng-repeat="slide in slides" active="slide.active">
+                    <img id="img-caraousal" ng-src="{{slide.image}}">
+
+                </slide>
+            </carousel>
+        </div>
     </div>
 
 
-    <!--Three canvas container-->
+
+<!--Three canvas container-->
 <div id="about" class="container-fluid text-center">
     <!--about treasure hunt canvas-->
     <h1 class="logolevels" style="color:white;">Bored? Tired of work? Fret not.</h1>
     <h2>Online treasure hunt is here!!!</h2>
+    <h2>{{message}}</h2>
     <div class="row">
         <div class="col-sm-4">
-            <img ng-src="images/aboutth1.jpg" class="img-responsive img-rounded "  alt="logo">
+            <img ng-src="images/aboutth1.jpg" class="img-responsive img-rounded " alt="logo">
         </div>
         <div class="col-sm-4">
-            <img ng-src="images/NIGHT.jpg" class="img-responsive img-rounded "  alt="logo">
+            <img ng-src="images/NIGHT.jpg" class="img-responsive img-rounded " alt="logo">
         </div>
-        <div class="col-sm-4" >
-            <img ng-src="images/aboutth3.jpg" class="img-responsive img-rounded "  alt="logo"  height="320">
+        <div class="col-sm-4">
+            <img ng-src="images/aboutth3.jpg" class="img-responsive img-rounded " alt="logo" height="320">
         </div>
     </div>
 </div>
@@ -66,7 +78,8 @@
             <p style="font-size:20px;">&#149 Four levels, one each day</p>
             <p style="font-size:20px;">&#149 Caution!! time taken to solve each level might be considered</p>
             <p style="font-size:20px;">&#149 We appreciate righteousness</p>
-            <p style="font-size:20px;">&#149 Colleagues qualifying to the next rounds will receive mail at the end of the day</p>
+            <p style="font-size:20px;">&#149 Colleagues qualifying to the next rounds will receive mail at the end of
+                the day</p>
 
         </div>
     </div>
@@ -80,10 +93,12 @@
             <br><br><br>
             <h1 class="logolevels"> Hurry up!!!!!</h1>
             <p align="center" style="font-size:30px;"> Registration ends on 20th September</p>
-            <p align="center"><a ng-click="showRegistrationForm()" class="btn btn-primary btnanim" style="border-color: #ff751a; font-size:20px; padding: 12px 50px;" >Register now</a></p>
+            <p align="center"><a ng-click="showRegistrationForm()" class="btn btn-primary btnanim"
+                                 style="border-color: #ff751a; font-size:20px; padding: 12px 50px;">Register now</a></p>
         </div>
         <div class="col-sm-4">
-            <img ng-src="images/thlogo4.png" class="img-responsive img-circle imgslide "  alt="logo"  width="320" height="320">
+            <img ng-src="images/thlogo4.png" class="img-responsive img-circle imgslide " alt="logo" width="320"
+                 height="320">
         </div>
     </div>
 </div>
@@ -158,37 +173,5 @@
 </footer>
 </div>
 <script>
-    $(document).ready(function(){
 
-        $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
-
-            if (this.hash !== "") {
-
-                event.preventDefault();
-
-
-                var hash = this.hash;
-
-
-                $('html, body').animate({
-                    scrollTop: $(hash).offset().top
-                }, 900, function(){
-
-
-                    window.location.hash = hash;
-                });
-            }
-        });
-
-        $(window).scroll(function() {
-            $(".slideanim").each(function(){
-                var pos = $(this).offset().top;
-
-                var winTop = $(window).scrollTop();
-                if (pos < winTop + 600) {
-                    $(this).addClass("slide");
-                }
-            });
-        });
-    })
 </script>
