@@ -2,20 +2,28 @@
  * Created by sz43 on 9/10/2016.
  */
 myApp.controller('rfController',
-    function rfController($scope,$http,$window,$modalInstance,DataService){
+    function rfController($scope,$http,$window,$uibModalInstance,DataService){
 
 
         $scope.submitForm = function(){
 
-            $scope.employee = DataService.employee;
 
-            $scope.editableEmployee = angular.copy($scope.employee);
-            $http.get('/', $scope.editableEmployee)
-            .success(function(data, status, headers, config) {
+            console.log($scope.editableEmployee.name);
+            var config = {
+                headers : {
+                    'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;',
+                    'Access-Control-Allow-Origin' : '*'
+                }
+            }
+
+
+            var data1= $scope.editableEmployee;
+            $http.post('http://localhost:8080/', $scope.editableEmployee)
+            .success(function(data1, status, headers, config) {
                   alert($scope.editableEmployee)
             })
             .error(function(data, status, headers, config) {
-                alert( "failure message: " + JSON.stringify({data: data}));
+                alert( "failure message: " + JSON.stringify({data:data1}));
             });
 
             //$window.history.back();
@@ -24,15 +32,14 @@ myApp.controller('rfController',
                 return ;
 
 
-            $modalInstance.close();
+            $uibModalInstance.close();
 
         }
         $scope.cancelForm = function(){
            // $window.history.back();
-            $modalInstance.dismiss();
+            $uibModalInstance.close();
         }
 
 
 
     });
-

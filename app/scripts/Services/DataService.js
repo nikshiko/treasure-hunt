@@ -6,8 +6,9 @@ myApp.factory('DataService',
 
         return{
             employee:{
-                fullName:"",
+                name:"",
                 email:"",
+                tpxid:"",
                 password:"",
 
             }
