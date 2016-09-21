@@ -15,9 +15,7 @@ myApp.controller('rfController',
                     'Access-Control-Allow-Origin' : '*'
                 }
             }
-            $scope.error_msg_password = null;
-            if($scope.editableEmployee.password !== $scope.editableEmployee.passwordConfirmation)
-                $scope.error_msg_password = "The passwords don't match!"
+
             var data = {
                 name:$scope.editableEmployee.name,
                 email:$scope.editableEmployee.email,
@@ -34,10 +32,10 @@ myApp.controller('rfController',
             });
 
             //$window.history.back();
-            $scope.$broadcast('show-errors-event');
+            /*$scope.$broadcast('show-errors-event');
             if($scope.registrationForm.$invalid)
                 return ;
-
+*/
 
             $uibModalInstance.close();
 
@@ -45,6 +43,12 @@ myApp.controller('rfController',
         $scope.cancelForm = function(){
            // $window.history.back();
             $uibModalInstance.close();
+        }
+        $scope.resetForm = function(){
+            // $window.history.back();
+            form.$setPristine();
+            form.$setUntouched();
+
         }
 
 

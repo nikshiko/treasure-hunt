@@ -13,18 +13,30 @@ myApp.config(function($routeProvider){
             templateUrl:"templates/home.html",
             controller:"homeController"
         })
-        .when("/Level2",{
-            templateUrl:"templates/level2.html",
-            controller:"level1Controller"
-            })
         .when("/Level3",{
-            templateUrl:"templates/level3.html",
-            controller:"level1Controller"
+            templateUrl:"templates/Level3.html",
+            controller:"level3Controller"
+        })
+
+        .when("/Level3/sub1",{
+            templateUrl:"templates/sublevel3p1.html",
+            controller:"level3Controller"
             })
-         .when("/Level4",{
-                templateUrl:"templates/level4.html",
-                controller:"level1Controller"
-            })
+
+        .when("/Level3/sub2",{
+            templateUrl:"templates/sublevel3p2.html",
+            controller:"level3Controller"
+        })
+
+        .when("/Level3/sub3",{
+            templateUrl:"templates/sublevel3p3.html",
+            controller:"level3Controller"
+        })
+
+        .when("/Level3/sub4",{
+            templateUrl:"templates/sublevel3p4.html",
+            controller:"level3Controller"
+        })
 
 
         .otherwise({

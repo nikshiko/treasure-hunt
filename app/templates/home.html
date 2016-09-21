@@ -34,14 +34,12 @@
     </div>
 
     <div ng-controller="carousalController" id="slides_control">
-        <div>
-            <div uib-carousel interval="myInterval">
-                <div uib-slide ng-repeat="slide in slides" active="slide.active">
+            <uib-carousel interval="myInterval">
+                <uib-slide ng-repeat="slide in slides" active="slide.active">
                     <img id="img-caraousal" ng-src="{{slide.image}}">
 
-                </div>
-            </div>
-        </div>
+                </uib-slide>
+            </uib-carousel>
     </div>
 
 
