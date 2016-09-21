@@ -8,9 +8,10 @@ myApp.factory('DataService',
             employee:{
                 name:"",
                 email:"",
+                empid:"",
                 tpxid:"",
                 password:"",
-
+                passwordConfirmation:""
             }
         }
     });

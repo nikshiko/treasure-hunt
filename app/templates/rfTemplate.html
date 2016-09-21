@@ -36,11 +36,28 @@
                     <span ng-show="registrationForm.tpxid.$invalid && registrationForm.tpxid.$touched">TPXID required!</span>
                 </div>
             </div>
+            <div class="form-group"  ng-class="{'has-error':registrationForm.empId.$invalid && registrationForm.empId.$touched}">
+                <label for="empId" class="col-sm-3 control-label">Employee ID</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="empId" id="empId"  placeholder="Enter Employee ID"
+                           ng-model="editableEmployee.empid" required >
+                    <span ng-show="registrationForm.empId.$invalid && registrationForm.empId.$touched">Employee ID required!</span>
+                </div>
+            </div>
+
             <div class="form-group"  ng-class="{'has-error':registrationForm.colleaguePassword.$invalid && registrationForm.colleaguePassword.$touched}">
                 <label class="col-sm-3 control-label" for="colleaguePassword">Password</label>
                 <div class="col-sm-6">
                     <input  type="password" name="colleaguePassword" class="form-control" id="colleaguePassword" placeholder="Password" ng-model="editableEmployee.password" required>
                     <span ng-show="registrationForm.colleaguePassword.$invalid && registrationForm.colleaguePassword.$touched">Password required!</span>
+                </div>
+            </div>
+            <div class="form-group"  ng-class="{'has-error':registrationForm.colleaguePasswordConfirmation.$invalid && registrationForm.colleaguePasswordConfirmation.$touched}">
+                <label class="col-sm-3 control-label" for="colleaguePasswordConfirmation">Confirm Password</label>
+                <div class="col-sm-6">
+                    <input  type="password" name="colleaguePasswordConfirmation" class="form-control" id="colleaguePasswordConfirmation" placeholder="Confirm Password" ng-model="editableEmployee.passwordConfirmation" required>
+                    <span ng-show="registrationForm.colleaguePasswordConfirmation.$invalid && registrationForm.colleaguePasswordConfirmation.$touched">Password required!</span>
+                    <span ng-if="editableEmployee.password!==editableEmployee.passwordConfirmation && editableEmployee.password!=undefined && editableEmployee.passwordConfirmation!=undefined ">Sorry Passwords don't match!</span>
                 </div>
             </div>
 
@@ -50,7 +67,8 @@
 </div>
 <div class="modal-footer">
     <button class="btn btn-default" type="button" ng-click="cancelForm()">Cancel</button>
-    <button class="btn btn-primary" type="submit" ng-click="submitForm()">Submit</button>
+    <button class="btn btn-primary" ng-if="editableEmployee.password===editableEmployee.passwordConfirmation" type="submit" ng-click="submitForm()">Submit</button>
+    <button class="btn btn-primary" ng-if="editableEmployee.password!==editableEmployee.passwordConfirmation"  type="submit" ng-disabled="true" >Submit</button>
     <button class="btn btn-warning" type="reset" ng-click="resetForm()">Reset</button>
 </div>
 </form>
