@@ -19,7 +19,7 @@
 </div>
 
 <!--Container for sublevel links and main frame for all sublevels-->
-<div class="container-fluid" ng-controller="level3Controller">
+<div class="container-fluid">
     <div class="row">
         <div id="leftcol" ng-model="myVar" class="col-sm-3 greybg text-center" >
             <br><br/><a href="#"  style="text-decoration:none;font-size:200%;pointer-events: none;cursor: default;font-size:200%;"> <strong>SUBLEVEL-1</strong></a><div style="background-image:url('images/close.png');background-size:cover;height:50px;width:50px;margin-top:-12%"></div>
@@ -37,7 +37,7 @@
                     <p style="background-color:white;font-size:130%;" class="col-sm-12">Play Fair People!</p>
                     <p style="background-color:white;font-size:130%;" class="col-sm-12">Use the key : "Hello World"</p>
                     <form>
-                        <div class="form-group">
+                        <div class="form-group"  ng-controller="level3Controller">
                             <label>Enter your answer:&lt;!&ndash;NORMAN JOSEPH WOODLAND&ndash;&gt; </label><br/>
                             <input type="text" class="form-control "id="answer" placeholder="Answer" ng-model="ans">
 

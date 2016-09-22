@@ -3,7 +3,12 @@
  */
 var myApp = angular.module("myApp",['ngRoute','ui.bootstrap']);
 
-myApp.config(function($routeProvider){
+
+myApp.config(function($routeProvider,$httpProvider){
+
+    $httpProvider.defaults.useXDomain = true;
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
+
     $routeProvider
         .when("/newRegistrationForm",{
             templateUrl:"templates/rfTemplate.html",
