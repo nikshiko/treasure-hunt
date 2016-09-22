@@ -47,7 +47,12 @@ myApp.config(function($routeProvider,$httpProvider){
             templateUrl:"templates/sublevel3p4.html",
             controller:"level3Controller"
         })
-
+        .when("/failure",{
+           templateUrl:"templates/failure.html"
+        })
+        .when("/success",{
+            templateUrl:"templates/success.html"
+        })
 
         .otherwise({
             redirectTo:"/home"
