@@ -1,0 +1,41 @@
+
+<div class="modal-header" style="background-color:#f0ad4e">
+    <span style="float:left;margin-right:5%;margin-top:0%;"><img style="height:60px;width:60px;" ng-src="images/thlogo4.png"/></span>
+    <span ><h3 class="modal-title" id="modal-title">Login</h3></span>
+
+</div>
+
+<form class="form-horizontal" for="form" name="loginForm"  novalidate>
+    <div class="modal-body" id="modal-body">
+
+        <fieldset>
+            
+            <div class="form-group"  ng-class="{'has-error':loginForm.tpxid.$invalid && loginForm.tpxid.$touched}">
+                <label for="tpxid" class="col-sm-3 control-label">TPX ID:</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="tpxid" id="tpxid" aria-describedby="emailHelp" placeholder="Enter TPXID"
+                           ng-model="editableEmployee.tpxid" required >
+                    <span ng-show="loginForm.tpxid.$invalid && loginForm.tpxid.$touched">TPXID required!</span>
+                </div>
+            </div>
+
+            <div class="form-group"  ng-class="{'has-error':loginForm.colleaguePassword.$invalid && loginForm.colleaguePassword.$touched}">
+                <label class="col-sm-3 control-label" for="colleaguePassword">Password</label>
+                <div class="col-sm-6">
+                    <input  type="password" name="colleaguePassword" class="form-control" id="colleaguePassword" placeholder="Password" ng-model="editableEmployee.password" required>
+                    <span ng-show="loginForm.colleaguePassword.$invalid && loginForm.colleaguePassword.$touched">Password required!</span>
+                </div>
+            </div>
+
+
+
+        </fieldset>
+
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-default" type="button" ng-click="cancelForm()">Cancel</button>
+        <button class="btn btn-primary" mg-if="" type="submit" ng-click="submitForm()">Submit</button>
+
+        <button class="btn btn-warning" type="reset" ng-click="resetForm()">Reset</button>
+    </div>
+</form>

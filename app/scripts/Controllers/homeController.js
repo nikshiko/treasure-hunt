@@ -10,6 +10,13 @@ myApp.controller("homeController",
                 controller:"rfController"
             });
         }
+        $scope.showLoginForm = function(){
+
+            $uibModal.open({
+                templateUrl:"templates/loginTemplate.html",
+                controller:"loginController"
+            });
+        }
         $scope.scrollTo = function(id) {
            var old =  $location.hash(id);
             $anchorScroll();

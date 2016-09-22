@@ -14,6 +14,11 @@ myApp.config(function($routeProvider,$httpProvider){
             templateUrl:"templates/rfTemplate.html",
             controller:"rfController"
         })
+        .when("/loginForm",{
+            templateUrl:"templates/loginTemplate.html",
+            controller:"loginController"
+        })
+
         .when("/home",{
             templateUrl:"templates/home.html",
             controller:"homeController"
