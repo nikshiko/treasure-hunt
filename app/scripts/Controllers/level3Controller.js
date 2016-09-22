@@ -1,5 +1,6 @@
 /**
- * Created by kidboyks on 22/9/16.
+ * Created 53
+ * by kidboyks on 22/9/16.
  */
 myApp.controller('level3Controller',function level3Controller($scope,$http,$window){
 
@@ -20,7 +21,16 @@ myApp.controller('level3Controller',function level3Controller($scope,$http,$wind
         console.log($scope.answer);
         $http.post('http://localhost:8080/', answerMap)
             .success(function (data, status, headers, config) {
-                $window.location.href = "http://localhost:8000/#/Level3/sub2"
+                if(sub === 1)
+                $window.location.href = "http://localhost:8000/#/Level3/sub2";
+
+                if(sub === 2)
+                    $window.location.href = "http://localhost:8000/#/Level3/sub3";
+
+                if(sub === 3)
+                    $window.location.href = "http://localhost:8000/#/Level3/sub4";
+
+
             })
             .error(function (data, status, headers, config) {
                 alert(answerMap.ques + " - " +answerMap.answer);

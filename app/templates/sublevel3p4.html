@@ -19,10 +19,10 @@
 </div>
 
 <!--Container for sublevel links and main frame for all sublevels-->
-<div class="container-fluid" >
+<div class="container-fluid">
     <div class="row">
-        <div id="leftcol" ng-model="myVar" class="col-sm-3 greybg text-center">
-            <br><br/><a href="#"  style="text-decoration:none;font-size:200%;pointer-events: none;cursor: default"> <strong>SUBLEVEL-1</strong></a><div style="background-image:url('images/close.png');background-size:cover;height:50px;width:50px;margin-top:-12%"></div>
+        <div id="leftcol" ng-model="myVar" class="col-sm-3 greybg text-center" >
+            <br><br/><a href="#"  style="text-decoration:none;font-size:200%;pointer-events: none;cursor: default;font-size:200%;"> <strong>SUBLEVEL-1</strong></a><div style="background-image:url('images/close.png');background-size:cover;height:50px;width:50px;margin-top:-12%"></div>
             <br><br><br/><a href="#" style=" text-decoration:none;pointer-events: none;cursor: default;;font-size:200%;"> <strong>SUBLEVEL-2</strong></a><div style="background-image:url('images/close.png');background-size:cover;height:50px;width:50px;margin-top:-12%"></div>
             <br><br><br/><a href="#" style="text-decoration:none;pointer-events: none;cursor: default;;font-size:200%;" ><strong> SUBLEVEL-3</strong></a><div style="background-image:url('images/close.png');background-size:cover;height:50px;width:50px;margin-top:-12%"></div>
             <br><br><br/><a href="#" style="text-decoration:none;pointer-events: none;cursor: default;;font-size:200%;"><strong> SUBLEVEL-4</strong></a><div style="background-image:url('images/open.png');background-size:cover;height:50px;width:50px;margin-top:-12%"></div>
@@ -32,38 +32,25 @@
         <div id="rightcol" class="col-sm-9 greybg">
             <div >
 
-                <div  >
-                    <h2 class="gradient">Sublevel-3</h2>
-                    <p style="background-color:white;font-size:130%;max-height:100px;overflow-y:scroll;" class="col-sm-12">Tom Dick and Harry were stranded on an island. <br/>
-                        Tom was a manager at an IT firm and suggested they will have to delegate
-                        work and stick together to survive.<br/>
-                        Tom would set up the fire, Harry was to built shelter and Dick was asked to catch some fish.<br/>
-                        After finishing their jobs quite early Tom and Harry sat waiting for Dick to return with some fish.<br/>
-                        Hours passed and Dick did not return, prompting the other two to go in search.<br/>
-                        On the shore of the beach they found a message for them " 1-4-9-13-16-20-22", followed by a note saying - "Sorry guys ! I caught seven fishes, but I ate 6.<br/>
-                        I've hidden the last fish on the island you can use the numbers to get to it!<br/>
-                        finders keepers!
-                        truly dick
-                        P.S SOS "
-                    </p>
+                <div >
+                    <h2 class="gradient">Sublevel-4</h2>
+                    <p style="background-color:white;font-size:130%;" class="col-sm-12">Play Fair People!</p>
+                    <p style="background-color:white;font-size:130%;" class="col-sm-12">Use the key : "Hello World"</p>
                     <form>
-                        <div class="form-group" ng-controller="level3Controller">
-                            <label>Enter your answer:&lt;!&ndash;NORMAN JOSEPH WOODLAND&ndash;&gt; </label>
-                            <input type="text" class="form-control col-sm-4" id="answer" placeholder="Answer" ng-model="answer">
-                            <br/>
-                            <button type="submit" class="btn btn-warning" style="margin-top:1%;" ng-click="submitAnswer(4)">Submit</button>
+                        <div class="form-group"  ng-controller="level3Controller">
+                            <label>Enter your answer:&lt;!&ndash;NORMAN JOSEPH WOODLAND&ndash;&gt; </label><br/>
+                            <input type="text" class="form-control "id="answer" placeholder="Answer" ng-model="answer">
+
+                            <button type="submit" class="btn btn-warning" style="margin-top:1%;" ng-click="submitAnswer(4)" >Submit</button>
                         </div>
                     </form>
-
                 </div>
+
 
             </div>
         </div>
     </div>
 </div>
-
-
-
 
 
 
