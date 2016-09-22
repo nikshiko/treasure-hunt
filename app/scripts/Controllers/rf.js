@@ -25,10 +25,12 @@ myApp.controller('rfController',
             };
             $http.post('http://localhost:8080/', data)
             .success(function(data, status, headers, config) {
-                  alert($scope.editableEmployee)
+                $window.location.href = "http://localhost:8000/#/Level3";
+
             })
             .error(function(data, status, headers, config) {
-                alert( "failure message: " + JSON.stringify({data:data1}));
+                $window.location.href = "http://localhost:8000/#/failure";
+
             });
 
             //$window.history.back();
@@ -79,9 +81,12 @@ myApp.controller('rfController',
             $http.post('http://localhost:8080/login', data)
                 .success(function(data, status, headers, config) {
 
+                    $window.location.href = "http://localhost:8000/#/Level3";
+
                 })
                 .error(function(data, status, headers, config) {
-                    alert( "failure message: " + JSON.stringify({data:data1}));
+                    $window.location.href = "http://localhost:8000/#/failure";
+
                 });
 
             //$window.history.back();

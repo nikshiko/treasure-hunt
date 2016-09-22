@@ -33,7 +33,7 @@ myApp.controller('level3Controller',function level3Controller($scope,$http,$wind
 
             })
             .error(function (data, status, headers, config) {
-                alert(answerMap.ques + " - " +answerMap.answer);
+                $window.location.href = "http://localhost:8000/#/failure";
 
             })
     }
