@@ -4,7 +4,8 @@ var app = express();
 var cors = require('cors');
 var answerChecker = require('./answerChecker');
 var port = process.env.PORT ||8080;
-
+var tp= "ty08";
+var pass="yolo123";
 
 app.use(bodyParser.json());
 app.use(cors());
@@ -14,10 +15,18 @@ app.post('/', function(req, res){
     console.log('here')
     console.log(req.body.answer+req.body.ques);
     if (answerChecker.check(req.body.ques,req.body.answer)){
-  
+
       res.status(200).send();
     } else{
         res.status(418).send('wrong');
 
     }
 });
+app.post('/login', function(req, res) {
+    if((req.body.tpxid==tp)&&(req.body.password==pass)){
+      res.sendStatus(200);
+    } else {
+      res.sendStatus(401);
+    }
+
+  });

@@ -78,7 +78,7 @@ myApp.controller('rfController',
             };
             $http.post('http://localhost:8080/login', data)
                 .success(function(data, status, headers, config) {
-                    alert($scope.editableEmployee)
+
                 })
                 .error(function(data, status, headers, config) {
                     alert( "failure message: " + JSON.stringify({data:data1}));
@@ -99,8 +99,7 @@ myApp.controller('rfController',
         }
         $scope.resetForm = function(){
             // $window.history.back();
-            form.$setPristine();
-            form.$setUntouched();
+
 
         }
 
