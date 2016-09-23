@@ -21,11 +21,29 @@ myApp.controller('rfController',
                 email:$scope.editableEmployee.email,
                 empid:$scope.editableEmployee.empid,
                 tpxid:$scope.editableEmployee.tpxid,
-                password:$scope.editableEmployee.password,
+                password:$scope.editableEmployee.password
             };
-            $http.post('http://localhost:8080/', data)
+            $http.post('http://localhost:8080/reg/check', data)
             .success(function(data, status, headers, config) {
-                $window.location.href = "http://localhost:8000/#/Level3";
+                var data = {
+                    name:$scope.editableEmployee.name,
+                    email:$scope.editableEmployee.email,
+                    empid:$scope.editableEmployee.empid,
+                    tpxid:$scope.editableEmployee.tpxid,
+                    password:$scope.editableEmployee.password
+                };
+
+                $http.post('http://localhost:8080/reg/put', data)
+
+                    .success(function(data, status, headers, config) {
+                        $window.location.href = "http://localhost:8000/#/success";
+
+                    })
+                    .error(function(data, status, headers, config) {
+                    $window.location.href = "http://localhost:8000/#/failure";
+
+                })
+
 
             })
             .error(function(data, status, headers, config) {
