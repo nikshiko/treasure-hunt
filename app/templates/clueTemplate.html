@@ -1,4 +1,20 @@
-<div class="container" ng-controller="clueController" >
-    {{clue}}git s
+<div class="modal-header" style="background-color:#f0ad4e">
+    <span style="float:left;margin-right:5%;margin-top:0%;"><img style="height:60px;width:60px;" ng-src="images/thlogo4.png"/></span>
+    <span ><h3 class="modal-title" id="modal-title">Hint</h3></span>
 
 </div>
+
+
+<div class="modal-body" id="modal-body" >
+
+        <fieldset>
+
+          {{clue}}
+
+
+        </fieldset>
+
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-warning" type="reset" ng-click="cancelForm()">OK</button>
+    </div>

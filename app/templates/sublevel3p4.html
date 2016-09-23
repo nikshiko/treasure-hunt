@@ -7,7 +7,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#myPage" ><span><img style="height:50px;width:100px;margin-top:-20%" ng-src="images/thlogo4.png"/></span></a>
+            <a class="navbar-brand" href="#myPage" ><span><img style="height:50px;width:100px;margin-top:-20%" ng-src="images/ignite_white_hires.png"/></span></a>
         </div>
     </div>
 </nav>
@@ -22,26 +22,28 @@
 <div class="container-fluid">
     <div class="row">
         <div id="leftcol" ng-model="myVar" class="col-sm-3 greybg text-center" >
-            <br><br/><a href="#"  style="text-decoration:none;font-size:200%;pointer-events: none;cursor: default;font-size:200%;"> <strong>SUBLEVEL-1</strong></a><div style="background-image:url('images/close.png');background-size:cover;height:50px;width:50px;margin-top:-12%"></div>
-            <br><br><br/><a href="#" style=" text-decoration:none;pointer-events: none;cursor: default;;font-size:200%;"> <strong>SUBLEVEL-2</strong></a><div style="background-image:url('images/close.png');background-size:cover;height:50px;width:50px;margin-top:-12%"></div>
-            <br><br><br/><a href="#" style="text-decoration:none;pointer-events: none;cursor: default;;font-size:200%;" ><strong> SUBLEVEL-3</strong></a><div style="background-image:url('images/close.png');background-size:cover;height:50px;width:50px;margin-top:-12%"></div>
-            <br><br><br/><a href="#" style="text-decoration:none;pointer-events: none;cursor: default;;font-size:200%;"><strong> SUBLEVEL-4</strong></a><div style="background-image:url('images/open.png');background-size:cover;height:50px;width:50px;margin-top:-12%"></div>
+            <br><br/><img ng-src="images/open.png" style="height:70px;width:70px;margin-top:-10%;"><a href="#"  style="text-decoration:none;font-size:200%;pointer-events: none;cursor: default;font-size:150%;"> <strong>SUBLEVEL-1</strong></a>
+            <br><br><br/><img ng-src="images/open.png" style="height:70px;width:70px;margin-top:-10%;"><a href="#" style=" text-decoration:none;pointer-events: none;cursor: default;;font-size:150%;"> <strong>SUBLEVEL-2</strong></a>
+            <br><br><br/><img ng-src="images/open.png" style="height:70px;width:70px;margin-top:-10%;"><a href="#" style="text-decoration:none;pointer-events: none;cursor: default;;font-size:150%;" ><strong> SUBLEVEL-3</strong></a>
+            <br><br><br/><img ng-src="images/open.png" style="height:70px;width:70px;margin-top:-10%;"><a href="#" style="text-decoration:none;pointer-events: none;cursor: default;;font-size:150%;color:orangered"><strong> SUBLEVEL-4</strong></a>
             <br><br>
         </div>
 
         <div id="rightcol" class="col-sm-9 greybg">
-            <div >
+            <div style="margin-top:5%;">
 
-                <div >
-                    <h2 class="gradient">Sublevel-4</h2>
-                    <p style="background-color:white;font-size:130%;" class="col-sm-12">Play Fair People!</p>
-                    <p style="background-color:white;font-size:130%;" class="col-sm-12">Use the key : "Hello World"</p>
+
+
+                    <h2 class="gradient">Sublevel-4</h2><br/>
+                    <p style="background-color:white;font-size:130%;" class="col-sm-12">Encrypted code: <strong>HI DE TH EG OL DI NT HE TR EX ES TU MP</strong></p>
+                    <p style="background-color:white;font-size:130%;" class="col-sm-12">Use the key : "Hello World"</p><br/><br/>
                     <form>
-                        <div class="form-group"  ng-controller="level3Controller">
-                            <label>Enter your answer:&lt;!&ndash;NORMAN JOSEPH WOODLAND&ndash;&gt; </label><br/>
+                        <div class="form-group"  ng-controller="level3Controller" >
+                            <label>Enter your answer: </label>
                             <input type="text" class="form-control "id="answer" placeholder="Answer" ng-model="answer">
 
                             <button type="submit" class="btn btn-warning" style="margin-top:1%;" ng-click="submitAnswer(4)" >Submit</button>
+                            <button  type="button" class="btn btn-info "style="margin-top:1%;"   ng-click="showClue()">Hint</button>
                         </div>
                     </form>
                 </div>

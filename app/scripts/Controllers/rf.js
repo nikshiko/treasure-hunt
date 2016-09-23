@@ -134,16 +134,13 @@ myApp.controller('rfController',
         function clueController($scope,$http,$window,$uibModalInstance){
 
 
-            $scope.showClue = function(sub,level){
 
-                if(level === 1 && sub == 1)
-                {
                 $scope.clue ="This is your clue" ;
-                }
+               $scope.cancelForm = function() {
+                   $uibModalInstance.close();
+               }
 
-                $uibModalInstance.close();
 
-            }
 
 
 

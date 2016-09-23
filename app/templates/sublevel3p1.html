@@ -7,7 +7,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#myPage" ><span><img style="height:50px;width:100px;margin-top:-20%" ng-src="images/thlogo4.png"/></span></a>
+            <a class="navbar-brand" href="#myPage" ><span><img style="height:50px;width:100px;margin-top:-20%" ng-src="images/ignite_white_hires.png"/></span></a>
         </div>
     </div>
 </nav>
@@ -21,29 +21,32 @@
 <!--Container for sublevel links and main frame for all sublevels-->
 <div class="container-fluid" >
     <div class="row">
-        <div id="leftcol" ng-model="myVar" class="col-sm-3 greybg text-center">
-            <br><br/><a href="#"  style="text-decoration:none;font-size:200%;pointer-events: none;cursor: default "> <strong>SUBLEVEL-1</strong></a><div style="background-image:url('images/open.png');background-size:cover;height:50px;width:50px;margin-top:-12%"></div>
-            <br><br><br/><a href="#" style=" text-decoration:none;pointer-events: none;cursor: default;font-size:200%;"> <strong>SUBLEVEL-2</strong></a><div style="background-image:url('images/close.png');background-size:cover;height:50px;width:50px;margin-top:-12%"></div>
-            <br><br><br/><a href="#" style="text-decoration:none;pointer-events: none;cursor: default;font-size:200%;" ><strong> SUBLEVEL-3</strong></a><div style="background-image:url('images/close.png');background-size:cover;height:50px;width:50px;margin-top:-12%"></div>
-            <br><br><br/><a href="#" style="text-decoration:none;pointer-events: none;cursor: default;font-size:200%;"><strong> SUBLEVEL-4</strong></a><div style="background-image:url('images/close.png');background-size:cover;height:50px;width:50px;margin-top:-12%"></div>
+        <img ng-src="">
+    </div>
+    <div class="row">
+        <div id="leftcol" ng-model="myVar" class="col-sm-3 greybg text-center" >
+            <br><br/><img ng-src="images/open.png" style="height:70px;width:70px;margin-top:-10%;"><a href="#"  style="text-decoration:none;font-size:200%;pointer-events: none;cursor: default;font-size:150%;color:orangered"> <strong>SUBLEVEL-1</strong></a>
+            <br><br><br/><img ng-src="images/close.png" style="height:70px;width:70px;margin-top:-10%;"><a href="#" style=" text-decoration:none;pointer-events: none;cursor: default;;font-size:150%;"> <strong>SUBLEVEL-2</strong></a>
+            <br><br><br/><img ng-src="images/close.png" style="height:70px;width:70px;margin-top:-10%;"><a href="#" style="text-decoration:none;pointer-events: none;cursor: default;;font-size:150%;" ><strong> SUBLEVEL-3</strong></a>
+            <br><br><br/><img ng-src="images/close.png" style="height:70px;width:70px;margin-top:-10%;"><a href="#" style="text-decoration:none;pointer-events: none;cursor: default;;font-size:150%;"><strong> SUBLEVEL-4</strong></a>
             <br><br>
         </div>
 
         <div id="rightcol" class="col-sm-9 greybg">
-            <div>
-                <div  >
-                    <h2 class="gradient">Sublevel-1</h2>
+            <div style="margin-top:5%;">
+
+            <h2 class="gradient">Sublevel-1</h2>
 
                     <br><p style="background-color:white;font-size:130%;" class="col-sm-4">RAEWE CREDX ESIDO V</p><br>
                     <form>
                         <div class="form-group" ng-controller="level3Controller">
                             <br/><br/>
-                            <label>Enter your answer:&lt;!&ndash;NORMAN JOSEPH WOODLAND&ndash;&gt; </label>
+                            <label>Enter your answer:</label>
                             <input type="text" class="form-control col-sm-3" id="answer" name="answer" placeholder="Answer" ng-model="answer">
 
                             <br>
                             <button type="submit" class="btn btn-warning "style="margin-top:1%;"  ng-disabled="isDisabled" ng-click="submitAnswer(1)">Submit</button>
-                            <button  class="btn btn-info "style="margin-top:1%;"   ng-click="showClue(1)">Hint</button>
+
                         </div>
                     </form>
                 </div>

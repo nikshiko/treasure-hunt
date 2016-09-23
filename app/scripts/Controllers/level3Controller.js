@@ -2,9 +2,9 @@
  * Created 53
  * by kidboyks on 22/9/16.
  */
-myApp.controller('level3Controller',function level3Controller($scope,$http,$window){
+myApp.controller('level3Controller',function level3Controller($scope,$http,$window,$uibModal){
 
-    $scope.showClue - function(){
+    $scope.showClue = function(){
         $uibModal.open({
             templateUrl:"templates/clueTemplate.html",
             controller:"clueController"
