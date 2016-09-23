@@ -17,6 +17,7 @@ myApp.controller("homeController",
                 controller:"loginController"
             });
         }
+
         $scope.scrollTo = function(id) {
            var old =  $location.hash(id);
             $anchorScroll();

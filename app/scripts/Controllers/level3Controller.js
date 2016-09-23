@@ -4,7 +4,12 @@
  */
 myApp.controller('level3Controller',function level3Controller($scope,$http,$window){
 
-
+    $scope.showClue - function(){
+        $uibModal.open({
+            templateUrl:"templates/clueTemplate.html",
+            controller:"clueController"
+        });
+    }
     $scope.submitAnswer = function(sub) {
         var answerMap ={
             ques:sub,
