@@ -23,7 +23,7 @@ myApp.controller('rfController',
                 tpxid:$scope.editableEmployee.tpxid,
                 password:$scope.editableEmployee.password
             };
-            $http.post('http://localhost:8080/reg/check', data)
+            $http.post('http://localhost:8081/reg/check', data)
             .success(function(data, status, headers, config) {
                 var data = {
                     name:$scope.editableEmployee.name,
@@ -33,7 +33,7 @@ myApp.controller('rfController',
                     password:$scope.editableEmployee.password
                 };
 
-                $http.post('http://localhost:8080/reg/put', data)
+                $http.post('http://localhost:8081/reg/put', data)
 
                     .success(function(data, status, headers, config) {
                         $window.location.href = "http://localhost:8000/#/success";
@@ -96,7 +96,7 @@ myApp.controller('rfController',
                 tpxid:$scope.editableEmployee.tpxid,
                 password:$scope.editableEmployee.password,
             };
-            $http.post('http://localhost:8080/login', data)
+            $http.post('http://localhost:8082/', data)
                 .success(function(data, status, headers, config) {
 
                     $window.location.href = "http://localhost:8000/#/Level3";

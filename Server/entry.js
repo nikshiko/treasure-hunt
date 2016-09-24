@@ -22,7 +22,7 @@ app.post('/', function(req, res){
 
     }
 });
-app.post('/login', function(req, res) {
+/*app.post('/login', function(req, res) {
     if((req.body.tpxid==tp)&&(req.body.password==pass)){
       res.sendStatus(200);
     } else {
@@ -30,3 +30,4 @@ app.post('/login', function(req, res) {
     }
 
   });
+*/

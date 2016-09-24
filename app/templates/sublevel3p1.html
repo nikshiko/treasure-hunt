@@ -1,5 +1,5 @@
 <!--navigation bar container-->
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default navbar-fixed-top" ng-controller="ScrollCtrl">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -8,6 +8,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="#myPage" ><span><img style="height:50px;width:100px;margin-top:-20%" ng-src="images/ignite_white_hires.png"/></span></a>
+            <a style="margin-top:2%;" ng-click="gotoElement('question')">View Question</a>
         </div>
     </div>
 </nav>
@@ -20,9 +21,9 @@
 
 <!--Container for sublevel links and main frame for all sublevels-->
 <div class="container-fluid" >
-    <div class="row">
-        <img ng-src="">
-    </div>
+
+        <img ng-src="images/julius_caesar_power_roman_legion_emperator_hd-wallpaper-694043.jpg" style="height:400px; width:100%;margin-top:-5%;">
+
     <div class="row">
         <div id="leftcol" ng-model="myVar" class="col-sm-3 greybg text-center" >
             <br><br/><img ng-src="images/open.png" style="height:70px;width:70px;margin-top:-10%;"><a href="#"  style="text-decoration:none;font-size:200%;pointer-events: none;cursor: default;font-size:150%;color:orangered"> <strong>SUBLEVEL-1</strong></a>
@@ -35,7 +36,7 @@
         <div id="rightcol" class="col-sm-9 greybg">
             <div style="margin-top:5%;">
 
-            <h2 class="gradient">Sublevel-1</h2>
+            <h2 class="gradient" id="question">Sublevel-1</h2>
 
                     <br><p style="background-color:white;font-size:130%;" class="col-sm-4">RAEWE CREDX ESIDO V</p><br>
                     <form>

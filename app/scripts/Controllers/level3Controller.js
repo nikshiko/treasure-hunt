@@ -34,7 +34,8 @@ myApp.controller('level3Controller',function level3Controller($scope,$http,$wind
 
                 if(sub === 3)
                     $window.location.href = "http://localhost:8000/#/Level3/sub4";
-
+                if(sub == 4)
+                    $window.location.href = "http://localhost:8000/#/clear"
 
             })
             .error(function (data, status, headers, config) {

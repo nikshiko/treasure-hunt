@@ -53,6 +53,9 @@ myApp.config(function($routeProvider,$httpProvider){
         .when("/success",{
             templateUrl:"templates/success.html"
         })
+        .when("/clear",{
+            templateUrl:"templates/congratulations.html"
+        })
 
         .otherwise({
             redirectTo:"/home"
