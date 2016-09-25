@@ -5,7 +5,8 @@
 myApp.controller('level3Controller',function level3Controller($scope,$http,$window,$uibModal,sharedProperties,userPersistenceService){
 
         $scope.tpxid = userPersistenceService.getCookieData();
-
+        console.log($scope.tpxid);
+        $scope.logstatus = ($scope.tpxid == undefined || $scope.tpxid == "" )?"LOGIN":"LOG OUT";
     $scope.showClue = function(sub){
         switch(sub){
             case 1 : sharedProperties.setProperty("Look Inside!:)");
@@ -40,7 +41,7 @@ myApp.controller('level3Controller',function level3Controller($scope,$http,$wind
             }
         };
         console.log($scope.answer);
-        $http.post('http://localhost:8082/', answerMap)
+        $http.post('http://localhost:8082/levels', answerMap)
             .success(function (data, status, headers, config) {
 
                 if( sub === 0)

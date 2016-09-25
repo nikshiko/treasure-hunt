@@ -23,7 +23,7 @@ myApp.controller('rfController',
                 tpxid:$scope.editableEmployee.tpxid,
                 password:$scope.editableEmployee.password
             };
-            $http.post('http://localhost:8081/reg/check', data)
+            $http.post('http://localhost:8082/reg/check', data)
             .success(function(data, status, headers, config) {
                 var data = {
                     name:$scope.editableEmployee.name,
@@ -33,7 +33,7 @@ myApp.controller('rfController',
                     password:$scope.editableEmployee.password
                 };
 
-                $http.post('http://localhost:8081/reg/put', data)
+                $http.post('http://localhost:8082/reg/put', data)
 
                     .success(function(data, status, headers, config) {
                         $window.location.href = "http://localhost:8000/#/success";
@@ -96,22 +96,24 @@ myApp.controller('rfController',
                 tpxid:$scope.editableEmployee.tpxid,
                 password:$scope.editableEmployee.password,
             };
-            $http.post('http://localhost:8082/', data)
+            $http.post('http://localhost:8082/login', data)
                 .success(function(data, status, headers, config) {
                     userPersistenceService.setCookieData($scope.editableEmployee.tpxid);
 
-                    if(data == 0)
+                    if(data == "0")
                     $window.location.href = "http://localhost:8000/#/Level1";
                     else
-                    if(data == 1)
+                    if(data == "1")
                         $window.location.href = "http://localhost:8000/#/Level1/sub2";
                     else
-                    if(data == 2)
-                        $window.location.href = "http://localhost:8000/#/Level1/clear";
+                    if(data == "2")
+                        $window.location.href = "http://localhost:8000/#/clear";
+                    $uibModalInstance.close();
 
                 })
                 .error(function(data, status, headers, config) {
-                    $scope.result = "Invalid Login!Forgot "
+                    $scope.result = "Invalid Login! Did you forget your password? ";
+                    $scope.contact = "Contact: TescoTechnologyDay.2016@in.tesco.com";
 
                 });
 
@@ -121,7 +123,7 @@ myApp.controller('rfController',
              return ;
              */
 
-            $uibModalInstance.close();
+
 
         }
         $scope.cancelForm = function(){
@@ -130,7 +132,7 @@ myApp.controller('rfController',
         }
         $scope.resetForm = function(){
             // $window.history.back();
-
+        $scope.result ="";$scope.contact = "";
 
         }
 
