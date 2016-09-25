@@ -23,6 +23,20 @@ myApp.config(function($routeProvider,$httpProvider){
             templateUrl:"templates/home.html",
             controller:"homeController"
         })
+
+        .when("/Level1",{
+            templateUrl:"templates/Level1.html",
+            controller:"level3Controller"
+        })
+        .when("/Level1/sub1",{
+            templateUrl:"templates/sublevel1p1.html",
+            controller:"level3Controller"
+        })
+        .when("/Level1/sub2",{
+            templateUrl:"templates/sublevel1p2.html",
+            controller:"level3Controller"
+        })
+
         .when("/Level3",{
             templateUrl:"templates/Level3.html",
             controller:"level3Controller"

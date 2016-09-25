@@ -1,0 +1,138 @@
+<!--navigation bar container-->
+<nav class="navbar navbar-default navbar-fixed-top">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#myPage" ><span><img style="height:50px;width:100px;margin-top:-20%" ng-src="images/ignite_white_hires.png"/></span></a>
+
+		</div>
+
+		<div class="collapse navbar-collapse" id="myNavbar">
+			<span id="eventName">TREASURE HUNT</span>
+			<ul class="nav navbar-nav navbar-right">
+
+				<li class="handhover"><a ng-click="">Nikhil K S</a></li>
+				<li class="handhover"><a ng-click="">LOG OUT</a></li>
+
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<!--header-->
+<div class="page-header text-center " style="border-bottom-color:white;">
+	<br><br><h2 style="font-size:400%">TOMB OF CLUES</h2>
+</div>
+<img class="featureImage"src="images/egypt.jpg" >
+
+<!--Container for sublevel links and main frame for all sublevels-->
+<div class="container-fluid">
+	<div class="row">
+		<div id="leftcol" ng-model="myVar" class="col-sm-3 greybg text-center" >
+			<br><br/><img ng-src="images/close.png" class="locked"><a class="lockedLevel" href="#" > <strong>LEVEL-1</strong></a>
+			<br><br><br/><img ng-src="images/close.png" class="locked"><a class="lockedLevel"  href="#" > <strong>LEVEL-2</strong></a>
+			<br><br>
+		</div>
+
+		<div id="rightcol" class="col-sm-9 greybg">
+
+			<div>
+				<h2 class="gradient">Welcome to TOMB OF CLUES </h2>
+				<blockquote><p>You are now going to need your wits to find the treasure. And who knows, you may actually learn something along the way!</p>
+					<p>So put your thinking cap, get your brain in gear and set your train of thoughts in motion down the track.</p>
+					<p>And please don't assume you wil solve the puzzles in one session; you will probably be coming back to this page several times over the next few days, as your brain makes intuitive leaps to solve the puzzles.</p>
+					<form>
+						<div class="form-group"  ng-controller="level3Controller" >
+							<button type="submit" class="btn btn-warning" style="margin-top:1%;" ng-click="submitAnswer(0)" >Start</button>
+						</div>
+					</form>
+				</blockquote>
+
+			</div>
+
+		</div>
+	</div>
+</div>
+</div>
+
+
+
+
+
+
+</body ng-app="myApp">
+</html>
+
+<!--
+
+	  &lt;!&ndash;navigation bar container&ndash;&gt;
+	  <nav class="navbar navbar-default navbar-fixed-top">
+	  	   <div class="container">
+		   		<div class="navbar-header">
+					 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+           				 <span class="icon-bar"></span>
+            			 <span class="icon-bar"></span>
+            			 <span class="icon-bar"></span>
+      				 </button>
+					 <a class="navbar-brand" href="#myPage" ><span><img style="height:50px;width:100px;margin-top:-20%" ng-src="ignite_white_hires.png"/></span></a>
+				</div>
+			</div>
+		</nav>
+		
+		&lt;!&ndash;header&ndash;&gt;
+		<div class="page-header text-center " style="border-bottom-color:white;">
+			 <br><br>
+			 <h1 style="font-size:400%" >TOMB OF CLUES</h1>
+  		</div>
+		
+		&lt;!&ndash;Container for sublevel links and main frame for all sublevels&ndash;&gt;
+		<div class="container-fluid>
+			 <div class="row">
+			 	  <div id="leftcol" ng-model="myVar" class="col-sm-3 greybg text-center">
+				  	   <br><a href="#" class="btn btn-primary btngrad"   ng-click="myVar='sub-1'" >SUBLEVEL-1</a>
+				  	   <br><br><a href="#" class="btn btn-primary btngrad" ng-disabled="true" ng-click="myVar='sub-2'" >SUBLEVEL-2</a>
+				  	   <br><br><a href="#" class="btn btn-primary btngrad" ng-disabled="true" ng-click="myVar='sub-3'" >SUBLEVEL-3</a>
+				  	   <br><br><a href="#" class="btn btn-primary btngrad" ng-disabled="true" ng-click="myVar='sub-4'" >SUBLEVEL-4</a>
+				  	   <br><br>
+				  </div>
+				  <div id="rightcol" class="col-sm-9 greybg">
+				  	   <div ng-switch="myVar">
+					   		<div ng-switch-when="sub-1">
+     							&lt;!&ndash; <h2>Sublevel-1</h2>
+     							 <p>Please type your answer in the below text box.You can only submit answer once!</p>&ndash;&gt;
+								<br><img class="img-responsive center-block" src="sublevel-1.jpg" style="width:400px; height:150px;" /><br>
+								 <form>
+								 	   <div class="form-group">
+									   		<label>Enter your answer:&lt;!&ndash;NORMAN JOSEPH WOODLAND&ndash;&gt; </label>
+											<input type="text" class="form-control" id="answer" ng-model="answer" placeholder="Answer">
+											<br>
+											<button type="submit" class="btn btn-primary" ng-model="sublevel1"  ng-click="SendData(1)">Submit</button>
+   									   </div>
+								</form>
+								 
+  							</div>
+  							
+  							<div ng-switch-default>
+     							 <h2>Welcome!!</h2>
+     							 <p>You are now going to need your wits to find the treasure. And who knows, you may actually learn something along the way!</p>
+								 <p>So put your thinking cap, get your brain in gear and set your train of thoughts in motion down the track.</p>
+								 <p>And please don't assume you wil solve the puzzles in one session; you will probably be coming back to this page several times over the next few days, as your brain makes intuitive leaps to solve the puzzles.</p>
+  							</div>
+						</div>
+				  </div>
+			</div>
+		</div>
+		
+			 
+			 
+		
+		
+		
+</>
+</html>
+	
+		-->

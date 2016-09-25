@@ -1,5 +1,5 @@
 <!--navigation bar container-->
-<nav class="navbar navbar-default navbar-fixed-top" ng-controller="ScrollCtrl">
+<nav class="navbar navbar-default navbar-fixed-top" >
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -8,49 +8,63 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="#myPage" ><span><img style="height:50px;width:100px;margin-top:-20%" ng-src="images/ignite_white_hires.png"/></span></a>
-            <a style="margin-top:2%;" ng-click="gotoElement('question')">View Question</a>
+
+
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <span id="eventName">TREASURE HUNT</span>
+            <ul class="nav navbar-nav navbar-right">
+
+                <li class="handhover"><a ng-click="">Nikhil K S</a></li>
+                <li class="handhover"><a ng-click="">LOG OUT</a></li>
+
+            </ul>
         </div>
     </div>
 </nav>
 
 <!--header-->
 <div class="page-header text-center " style="border-bottom-color:white;">
-    <br><br><h1 class="gradient" >LEVEL-3</h1>
-    <h2>Cryptography</h2>
+    <br><br>
+    <h2 style="font-size:400%">CAVE OF CRYPTS</h2>
+    <div style="margin-top:5%;" class="col-sm-12 text-center" ng-controller="ScrollCtrl"><a style="font-size:150%;text-decoration: none;"  ng-click="gotoElement('question')"> Click to View Question</a></div>
 </div>
 
 <!--Container for sublevel links and main frame for all sublevels-->
 <div class="container-fluid" >
 
-        <img ng-src="images/julius_caesar_power_roman_legion_emperator_hd-wallpaper-694043.jpg" style="height:400px; width:100%;margin-top:-5%;">
+        <img ng-src="images/julius_caesar_power_roman_legion_emperator_hd-wallpaper-694043.jpg" class="featureImage">
 
     <div class="row">
-        <div id="leftcol" ng-model="myVar" class="col-sm-3 greybg text-center" >
-            <br><br/><img ng-src="images/open.png" style="height:70px;width:70px;margin-top:-10%;"><a href="#"  style="text-decoration:none;font-size:200%;pointer-events: none;cursor: default;font-size:150%;color:orangered"> <strong>SUBLEVEL-1</strong></a>
-            <br><br><br/><img ng-src="images/close.png" style="height:70px;width:70px;margin-top:-10%;"><a href="#" style=" text-decoration:none;pointer-events: none;cursor: default;;font-size:150%;"> <strong>SUBLEVEL-2</strong></a>
-            <br><br><br/><img ng-src="images/close.png" style="height:70px;width:70px;margin-top:-10%;"><a href="#" style="text-decoration:none;pointer-events: none;cursor: default;;font-size:150%;" ><strong> SUBLEVEL-3</strong></a>
-            <br><br><br/><img ng-src="images/close.png" style="height:70px;width:70px;margin-top:-10%;"><a href="#" style="text-decoration:none;pointer-events: none;cursor: default;;font-size:150%;"><strong> SUBLEVEL-4</strong></a>
+        <div id="leftcol" ng-model="myVar" class="col-sm-3 greybg text-center" style="padding-top:5%;">
+            <br><br/><img ng-src="images/open.png" class="locked"><a class="lockedLevel" href="#"  style="color:orangered"> <strong>LEVEL-1</strong></a>
+            <br><br><br/><img ng-src="images/close.png" class="locked"><a class="lockedLevel" href="#" > <strong>LEVEL-2</strong></a>
+            <br><br><br/><img ng-src="images/close.png" class="locked"><a class="lockedLevel" href="#"  ><strong> LEVEL-3</strong></a>
+            <br><br><br/><img ng-src="images/close.png" class="locked"><a class="lockedLevel" href="#" ><strong> LEVEL-4</strong></a>
             <br><br>
         </div>
 
         <div id="rightcol" class="col-sm-9 greybg">
-            <div style="margin-top:5%;">
+            <div style="margin-top:5%;padding-top:5%;">
 
-            <h2 class="gradient" id="question">Sublevel-1</h2>
-
-                    <br><p style="background-color:white;font-size:130%;" class="col-sm-4">RAEWE CREDX ESIDO V</p><br>
+            <h2 class="gradient" id="question">Question:</h2>
+                    <blockquote>
+                    <p>RAEWE CREDX ESIDOV</p>
+                    </blockquote>
                     <form>
                         <div class="form-group" ng-controller="level3Controller">
                             <br/><br/>
-                            <label>Enter your answer:</label>
-                            <input type="text" class="form-control col-sm-3" id="answer" name="answer" placeholder="Answer" ng-model="answer">
+                            <label>Enter your answer:</label><!-- -->
+                            <input type="text" class="form-control col-sm-3" id="answer" name="answer" placeholder="Answer" ng-model="answer"><span style="color:red">{{result}}</span>
 
                             <br>
-                            <button type="submit" class="btn btn-warning "style="margin-top:1%;"  ng-disabled="isDisabled" ng-click="submitAnswer(1)">Submit</button>
+                            <button type="submit" class="btn btn-warning "style="margin-top:1%;"  ng-disabled="isDisabled" ng-click="submitAnswer(3)">Submit</button>
 
                         </div>
                     </form>
+
                 </div>
+
               </div>
     </div>
 </div>

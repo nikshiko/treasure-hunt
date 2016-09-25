@@ -1,0 +1,28 @@
+#eventName{
+    margin-left:25%;
+    font-size:300%;
+}
+
+.featureImage{
+    height:400px;
+    width:100%;
+    margin-top:2%;
+}
+.locked{
+
+   height:70px;
+    width:70px;
+    margin-top:-10%;
+}
+
+.lockedLevel{
+    padding-left:5%;
+    text-decoration:none;
+    pointer-events: none;
+    cursor: default;
+    font-size:150%;
+}
+.handhover:hover{
+
+ cursor: hand;
+}

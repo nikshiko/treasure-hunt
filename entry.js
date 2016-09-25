@@ -3,7 +3,7 @@ var bodyParser = require('body-parser');
 var app = express();
 var cors = require('cors');
 var answerChecker = require('./answerChecker');
-var port = process.env.PORT ||8080;
+var port = process.env.PORT ||8082;
 var tp= "ty08";
 var pass="yolo123";
 

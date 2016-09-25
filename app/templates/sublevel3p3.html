@@ -9,23 +9,33 @@
             </button>
             <a class="navbar-brand" href="#myPage" ><span><img style="height:50px;width:100px;margin-top:-20%" ng-src="images/ignite_white_hires.png"/></span></a>
         </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <span id="eventName">TREASURE HUNT</span>
+            <ul class="nav navbar-nav navbar-right">
+
+                <li class="handhover"><a ng-click="#">Nikhil K S</a></li>
+                <li class="handhover"><a ng-click="#">LOG OUT</a></li>
+
+            </ul>
+        </div>
     </div>
 </nav>
 
 <!--header-->
 <div class="page-header text-center " style="border-bottom-color:white;">
-    <br><br><h1 class="gradient" >LEVEL-3</h1>
-    <h2>Cryptography</h2>
+    <br><br>
+    <h2 style="font-size:400%">CAVE OF CRYPTS</h2>
+    <div style="margin-top:5%;" class="col-sm-12 text-center" ng-controller="ScrollCtrl"><a style="font-size:150%;text-decoration: none;"  ng-click="gotoElement('question')"> Click to View Question</a></div>
 </div>
-<img src="images/WWII_3.png" style="height:400px; width:100%;margin-top:5%;">
+<img src="images/WWII_3.png" class="featureImage">
 <!--Container for sublevel links and main frame for all sublevels-->
 <div class="container-fluid" >
     <div class="row">
-        <div id="leftcol" ng-model="myVar" class="col-sm-3 greybg text-center" >
-            <br><br/><img ng-src="images/open.png" style="height:70px;width:70px;margin-top:-10%;"><a href="#"  style="text-decoration:none;font-size:200%;pointer-events: none;cursor: default;font-size:150%;"> <strong>SUBLEVEL-1</strong></a>
-            <br><br><br/><img ng-src="images/open.png" style="height:70px;width:70px;margin-top:-10%;"><a href="#" style=" text-decoration:none;pointer-events: none;cursor: default;;font-size:150%;"> <strong>SUBLEVEL-2</strong></a>
-            <br><br><br/><img ng-src="images/open.png" style="height:70px;width:70px;margin-top:-10%;"><a href="#" style="text-decoration:none;pointer-events: none;cursor: default;;font-size:150%;color:orangered" ><strong> SUBLEVEL-3</strong></a>
-            <br><br><br/><img ng-src="images/close.png" style="height:70px;width:70px;margin-top:-10%;"><a href="#" style="text-decoration:none;pointer-events: none;cursor: default;;font-size:150%;"><strong> SUBLEVEL-4</strong></a>
+        <div id="leftcol" ng-model="myVar" class="col-sm-3 greybg text-center" style="padding-top:5%;" >
+            <br><br/><img ng-src="images/open.png" class="locked"><a class="lockedLevel" href="#" > <strong>LEVEL-1</strong></a>
+            <br><br><br/><img ng-src="images/open.png" class="locked"><a class="lockedLevel" href="#" > <strong>LEVEL-2</strong></a>
+            <br><br><br/><img ng-src="images/open.png" class="locked"><a class="lockedLevel" href="#" style="color:orangered" ><strong>LEVEL-3</strong></a>
+            <br><br><br/><img ng-src="images/close.png" class="locked"><a class="lockedLevel" href="#" ><strong>LEVEL-4</strong></a>
             <br><br>
         </div>
 
@@ -33,11 +43,11 @@
         <div id="rightcol" class="col-sm-9 greybg">
 
 
-                <div style="margin-top:5%;">
+                <div style="margin-top:5%;padding-top:5%;">
 
 
-                    <h2 class="gradient">Sublevel-3</h2>
-                    <p style="background-color:white;font-size:130%;max-height:200px;overflow-y:scroll;margin-bottom:2%;" class="col-sm-12">Tom Dick and Harry were stranded on an island. <br/>
+                    <h2 class="gradient" id="question">Question:</h2>
+                    <p ><blockquote>Tom Dick and Harry were stranded on an island. <br/>
                         Tom was a manager at an IT firm and suggested they will have to delegate
                         work and stick together to survive.<br/>
                         Tom would set up the fire, Harry was to built shelter and Dick was asked to catch some fish.<br/>
@@ -47,15 +57,16 @@
                         I've hidden the last fish on the island you can use the numbers to get to it!<br/>
                         finders keepers!<br/>
                         truly dick<br/>
-                        P.S SOS "
+                        P.S SOS "</blockquote>
                     </p>
+
                     <p></p>
                     <form>
                         <div class="form-group" ng-controller="level3Controller">
-                            <label>Enter your answer:</label>
+                            <label>Enter your answer:</label><span style="color:red">{{result}}</span>
                             <input type="text" class="form-control col-sm-4" id="answer" placeholder="Answer" ng-model="answer">
                             <br/>
-                            <button type="submit" class="btn btn-warning" style="margin-top:1%;" ng-click="submitAnswer(3)">Submit</button>
+                            <button type="submit" class="btn btn-warning" style="margin-top:1%;" ng-click="submitAnswer(5)">Submit</button>
                         </div>
                     </form>
 

@@ -1,9 +1,11 @@
 'use strict';
 var allAnswers = {
-  1: "answer",
+  1: "answer0",
   2: "answer1",
   3: "answer2",
-  4: "answer3"
+  4: "answer3",
+  5: "answer4",
+  6: "answer5"
 };
 exports.check = function(qno, answer){
   if(allAnswers[qno]==answer){

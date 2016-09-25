@@ -1,0 +1,63 @@
+
+	  <nav class="navbar navbar-default navbar-fixed-top">
+	  	   <div class="container">
+		   		<div class="navbar-header">
+					 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+           				 <span class="icon-bar"></span>
+            			 <span class="icon-bar"></span>
+            			 <span class="icon-bar"></span>
+      				 </button>
+					 <a class="navbar-brand" href="#myPage" ><span><img style="height:50px;width:100px;margin-top:-20%" ng-src="images/ignite_white_hires.png"/></span></a>
+				</div>
+			</div>
+		</nav>
+		
+		<!--header-->
+		<div class="page-header text-center " style="border-bottom-color:white;">
+			 <br><br>
+			 <h2 class="eventName">TOMB OF CLUES</h2>
+			<div style="margin-top:5%;" class="col-sm-12 text-center" ng-controller="ScrollCtrl"><a style="font-size:150%;text-decoration: none;"  ng-click="gotoElement('question')"> Click to View Question</a></div>
+  		</div>
+	  <img ng-src="images/binary.jpg" class="featureImage">
+		<!--Container for sublevel links and main frame for all sublevels-->
+		<div class="container-fluid">
+			 <div class="row">
+			 	  <div id="leftcol" ng-model="myVar" class="col-sm-3 greybg text-center">
+
+					  <br><br/><img ng-src="images/open.png" class="locked"><a class="lockedLevel" href="#" > <strong>LEVEL-1</strong></a>
+					  <br><br><br/><img ng-src="images/open.png" class="locked"><a class="lockedLevel"  href="#" style="color:orangered" > <strong>LEVEL-2</strong></a>  <br><br>
+				  </div>
+				  <div id="rightcol" class="col-sm-9 greybg">
+				  	   <div ng-switch="myVar">
+					   		<div >
+     							<!-- <h2>Sublevel-2</h2>
+     							 <p>Lets play hide and seek</p>-->
+								<h2 class="gradient" id="question">QUESTION</h2>
+								<blockquote>
+								 <br><img class="img-responsive center-block" src="images/sublevel-2.png" style="width:400px; height:150px;" /><br>
+								</blockquote>
+									<form>
+								 	   <div class="form-group" ng-controller="level3Controller">
+									   		<label>Enter your answer:</label>
+											<input type="text" class="form-control" id="answer" placeholder="Answer" ng-model="answer">
+											<br>
+											<button type="submit" class="btn btn-warning"  ng-click="submitAnswer(2)" >Submit</button>
+										   <button  type="button"  class="btn btn-info"  ng-click="showClue(2)">Hint</button>
+									   </div>
+								</form>
+
+  							</div>
+						</div>
+				  </div>
+			</div>
+		</div>
+		
+			 
+			 
+		
+		
+		
+</body>
+</html>
+	
+		

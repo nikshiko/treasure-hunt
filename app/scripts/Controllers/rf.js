@@ -99,11 +99,11 @@ myApp.controller('rfController',
             $http.post('http://localhost:8082/', data)
                 .success(function(data, status, headers, config) {
 
-                    $window.location.href = "http://localhost:8000/#/Level3";
+                    $window.location.href = "http://localhost:8000/#/Level";
 
                 })
                 .error(function(data, status, headers, config) {
-                    $window.location.href = "http://localhost:8000/#/failure";
+                    $scope.result = "Invalid Login!Forgot "
 
                 });
 
@@ -131,11 +131,11 @@ myApp.controller('rfController',
     })
 
     .controller('clueController',
-        function clueController($scope,$http,$window,$uibModalInstance){
+        function clueController($scope,$http,$window,sharedProperties,$uibModalInstance){
 
 
 
-                $scope.clue ="This is your clue" ;
+                $scope.clue = sharedProperties.getProperty();
                $scope.cancelForm = function() {
                    $uibModalInstance.close();
                }

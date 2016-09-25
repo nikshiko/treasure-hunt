@@ -4,10 +4,12 @@
 <!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
 <head>
+
+
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>My AngularJS App</title>
+  <title>Treasure Hunt</title>
   <meta name="description" content="">
 
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
@@ -16,6 +18,8 @@
   <link rel="stylesheet" href="styles/googlefonts.css" type="text/css">
   <link rel="stylesheet" href="styles/latofonts.css" type="text/css">
   <link rel="stylesheet" href="styles/treasurehunt.css" type="text/css">
+  <link rel="stylesheet" href="styles/level.css" type="text/css">
+  <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
   <link rel="stylesheet" href="app.css">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 
@@ -23,7 +27,9 @@
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="60" id="body">
 
-<div ng-view>
+
+<div ng-view autoscroll="true" >
+
 </div>
 <!--[if lt IE 7]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -57,6 +63,7 @@
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="scripts/Services/anchorSmoothScroll.js"></script>
-
+<script src="scripts/Services/hint.js"></script>
+<!--Answer:NORMAN JOSEPH WOODLAND-->
 </body>
 </html>
