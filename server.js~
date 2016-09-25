@@ -133,7 +133,7 @@ app.post('/login', function(req, res) {
        //req.session.tpxid=req.body.tpxid;
        //req.session.name=user.name;
 	     //mongoose.connection.close();
-	     res.send(user.progress);
+	     res.send(user.progress.toString());
 	}
 	});
   });

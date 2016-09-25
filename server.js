@@ -191,28 +191,18 @@ app.post('/admin', function(req, res) {
   }
 });
 
-/*app.post('/admin/find', function(req, res) {
-   // if(req.session.tpxid=="admin"){
+app.post('/admin/find', function(req, res) {
     User.find({}, function(err, users) {
     if (err) throw err;
     res.json(users);
     console.log(users);
   });
-}
-else {
-  res.sendStatus(401);
-}
 });
 
 app.post('/admin/progress', function(req, res) {
-    //if(req.session.tpxid=="admin"){
     User.find({'progress' : req.body.progress}, function(err, users) {
     if (err) throw err;
     res.json(users);
     console.log(users);
   });
-}
-else {
-  res.sendStatus(401);
-}
-}); */
+});

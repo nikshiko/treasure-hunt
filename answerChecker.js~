@@ -1,7 +1,7 @@
 'use strict';
 var allAnswers = {
   1: "norman joseph woodland",
-  2: "a55a",
+  2: "answer1",
   3: "answer2",
   4: "answer3",
   5: "answer4",

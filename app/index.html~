@@ -14,6 +14,7 @@
 
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+
   <link rel="stylesheet" href="styles/googlefonts.css" type="text/css">
   <link rel="stylesheet" href="styles/latofonts.css" type="text/css">
   <link rel="stylesheet" href="styles/treasurehunt.css" type="text/css">
@@ -67,6 +68,6 @@
 <script src="scripts/Services/hint.js"></script>
 <script src="scripts/Services/userPersistenceService.js"></script>
 
-<!--Answer:norman joseph woodland-->
+<!--Answer:NORMAN JOSEPH WOODLAND-->
 </body>
 </html>
