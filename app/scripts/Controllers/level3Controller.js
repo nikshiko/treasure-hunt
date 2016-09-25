@@ -40,18 +40,22 @@ myApp.controller('level3Controller',function level3Controller($scope,$http,$wind
                 'Access-Control-Allow-Origin' : '*'
             }
         };
-
+        if (sub === 0)
+            $window.location.href = "http://localhost:8000/#/Level1/sub1";
+        if (sub === 7)
+            $window.location.href = "http://localhost:8000/#/Level3/sub1";
+       if(sub !=0 && sub !=7)
         $http.post('http://localhost:8082/levels', answerMap)
             .success(function (data, status, headers, config) {
                if(data == "correct") {
-                   if (sub === 0)
-                       $window.location.href = "http://localhost:8000/#/Level1/sub1";
+
                    if (sub === 1)
                        $window.location.href = "http://localhost:8000/#/Level1/sub2";
 
-                   if (sub === 2)
+                   if (sub === 2) {
                        $window.location.href = "http://localhost:8000/#/clear";
 
+                   }
                    if (sub === 3)
                        $window.location.href = "http://localhost:8000/#/Level3/sub2";
 
@@ -75,10 +79,12 @@ myApp.controller('level3Controller',function level3Controller($scope,$http,$wind
                    $window.location.href = "http://localhost:8000/#/home";
                }
 
+
             })
             .error(function (data, status, headers, config) {
                 $scope.result = "Sorry !That was wrong."
 
             })
+
     }
     });

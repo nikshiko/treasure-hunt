@@ -49,6 +49,8 @@ myApp.controller('rfController',
             .error(function(data, status, headers, config) {
                 $window.location.href = "http://localhost:8000/#/failure";
 
+
+
             });
 
             //$window.history.back();
