@@ -45,7 +45,7 @@
 								</blockquote>
 									<form>
 								 	   <div class="form-group" ng-controller="level3Controller">
-									   		<label>Enter your answer:</label>
+									   		<label>Enter your answer:</label><span style="color:red">{{result}}</span>
 											<input type="text" class="form-control" id="answer" placeholder="Answer" ng-model="answer">
 											<br>
 											<button type="submit" class="btn btn-warning"  ng-click="submitAnswer(2)" >Submit</button>

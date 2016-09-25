@@ -5,7 +5,7 @@
 myApp.controller('level3Controller',function level3Controller($scope,$http,$window,$uibModal,sharedProperties,userPersistenceService){
 
         $scope.tpxid = userPersistenceService.getCookieData();
-        console.log($scope.tpxid);
+
         $scope.logstatus = ($scope.tpxid == undefined || $scope.tpxid == "" )?"LOGIN":"LOG OUT";
     $scope.showClue = function(sub){
         switch(sub){
@@ -40,31 +40,40 @@ myApp.controller('level3Controller',function level3Controller($scope,$http,$wind
                 'Access-Control-Allow-Origin' : '*'
             }
         };
-        console.log($scope.answer);
+
         $http.post('http://localhost:8082/levels', answerMap)
             .success(function (data, status, headers, config) {
+               if(data == "correct") {
+                   if (sub === 0)
+                       $window.location.href = "http://localhost:8000/#/Level1/sub1";
+                   if (sub === 1)
+                       $window.location.href = "http://localhost:8000/#/Level1/sub2";
 
-                if( sub === 0)
-                    $window.location.href = "http://localhost:8000/#/Level1/sub1";
-                if( sub === 1)
-                    $window.location.href = "http://localhost:8000/#/Level1/sub2";
+                   if (sub === 2)
+                       $window.location.href = "http://localhost:8000/#/clear";
 
-                if( sub === 2)
-                    $window.location.href = "http://localhost:8000/#/clear";
+                   if (sub === 3)
+                       $window.location.href = "http://localhost:8000/#/Level3/sub2";
 
-                if( sub === 3)
-                    $window.location.href = "http://localhost:8000/#/Level3/sub2";
+                   if (sub === 4)
+                       $window.location.href = "http://localhost:8000/#/Level3/sub3";
 
-                if(sub === 4)
-                    $window.location.href = "http://localhost:8000/#/Level3/sub3";
+                   if (sub === 5)
+                       $window.location.href = "http://localhost:8000/#/Level3/sub4";
 
-                if(sub === 5)
-                    $window.location.href = "http://localhost:8000/#/Level3/sub4";
-
-                if(sub === 6)
-                    $window.location.href = "http://localhost:8000/#/clear";
-                if(sub == 7)
-                    $window.location.href = "http://localhost:8000/#/Level3/sub1"
+                   if (sub === 6)
+                       $window.location.href = "http://localhost:8000/#/clear";
+                   if (sub == 7)
+                       $window.location.href = "http://localhost:8000/#/Level3/sub1"
+               }
+               else if(data == "wrong")
+               {
+                   $scope.result = "Sorry !That was wrong.";
+               }
+               else if(data == "login")
+               {
+                   $window.location.href = "http://localhost:8000/#/home";
+               }
 
             })
             .error(function (data, status, headers, config) {

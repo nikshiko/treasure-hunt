@@ -12,7 +12,7 @@ app.use(cors());
 app.listen(port);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.post('/', function(req, res){
-    console.log('here')
+
     console.log(req.body.answer+req.body.ques);
     if (answerChecker.check(req.body.ques,req.body.answer)){
 

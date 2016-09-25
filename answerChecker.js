@@ -9,7 +9,6 @@ var allAnswers = {
 };
 exports.check = function(qno, answer){
   if(allAnswers[qno]==answer){
-    console.log(allAnswers[qno]);
     return true;
 
   }
