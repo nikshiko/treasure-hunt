@@ -79,7 +79,7 @@ myApp.controller('rfController',
  */
 
 .controller('loginController',
-    function loginController($scope,$http,$window,$uibModalInstance){
+    function loginController($scope,$http,$window,$uibModalInstance,userPersistenceService){
 
 
         $scope.submitForm = function(){
@@ -98,8 +98,16 @@ myApp.controller('rfController',
             };
             $http.post('http://localhost:8082/', data)
                 .success(function(data, status, headers, config) {
+                    userPersistenceService.setCookieData($scope.editableEmployee.tpxid);
 
-                    $window.location.href = "http://localhost:8000/#/Level";
+                    if(data == 0)
+                    $window.location.href = "http://localhost:8000/#/Level1";
+                    else
+                    if(data == 1)
+                        $window.location.href = "http://localhost:8000/#/Level1/sub2";
+                    else
+                    if(data == 2)
+                        $window.location.href = "http://localhost:8000/#/Level1/clear";
 
                 })
                 .error(function(data, status, headers, config) {
@@ -129,6 +137,17 @@ myApp.controller('rfController',
 
 
     })
+
+    .controller('logoutController',
+        function logoutController($scope,$http,$window,userPersistenceService){
+
+
+            $scope.logout = function(){
+                userPersistenceService.clearCookieData();
+                $window.location.href = "http://localhost:8000/#/home";
+            }
+
+        })
 
     .controller('clueController',
         function clueController($scope,$http,$window,sharedProperties,$uibModalInstance){

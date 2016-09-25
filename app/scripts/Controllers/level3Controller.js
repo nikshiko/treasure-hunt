@@ -2,7 +2,9 @@
  * Created 53
  * by kidboyks on 22/9/16.
  */
-myApp.controller('level3Controller',function level3Controller($scope,$http,$window,$uibModal,sharedProperties){
+myApp.controller('level3Controller',function level3Controller($scope,$http,$window,$uibModal,sharedProperties,userPersistenceService){
+
+        $scope.tpxid = userPersistenceService.getCookieData();
 
     $scope.showClue = function(sub){
         switch(sub){
@@ -26,7 +28,8 @@ myApp.controller('level3Controller',function level3Controller($scope,$http,$wind
         if($scope.answer !== undefined) {
             var answerMap = {
                 ques: sub,
-                answer: $scope.answer.toLowerCase()
+                answer: $scope.answer.toLowerCase(),
+                tpxid : userPersistenceService.getCookieData()
             };
         }
 
