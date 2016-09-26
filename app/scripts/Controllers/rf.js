@@ -23,7 +23,7 @@ myApp.controller('rfController',
                 tpxid:$scope.editableEmployee.tpxid,
                 password:$scope.editableEmployee.password
             };
-            $http.post('http://localhost:8082/reg/check', data)
+            $http.post('http://0.0.0.0:8082/reg/check', data)
             .success(function(data, status, headers, config) {
                 var data = {
                     name:$scope.editableEmployee.name,
@@ -33,25 +33,25 @@ myApp.controller('rfController',
                     password:$scope.editableEmployee.password
                 };
 
-                $http.post('http://localhost:8082/reg/put', data)
+                $http.post('http://0.0.0.0:8082/reg/put', data)
 
                     .success(function(data, status, headers, config) {
                         if(data == "exists")
-                        $window.location.href = "http://localhost:8000/#/failure";
+                        $window.location.href = "http://0.0.0.0:8000/#/failure";
                         else if(data == "registered")
-                            $window.location.href = "http://localhost:8000/#/success";
+                            $window.location.href = "http://0.0.0.0:8000/#/success";
 
 
                     })
                     .error(function(data, status, headers, config) {
-                    $window.location.href = "http://localhost:8000/#/failure";
+                    $window.location.href = "http://0.0.0.0:8000/#/failure";
 
                 })
 
 
             })
             .error(function(data, status, headers, config) {
-                $window.location.href = "http://localhost:8000/#/failure";
+                $window.location.href = "http://0.0.0.0:8000/#/failure";
 
 
 
@@ -102,18 +102,18 @@ myApp.controller('rfController',
                 tpxid:$scope.editableEmployee.tpxid,
                 password:$scope.editableEmployee.password,
             };
-            $http.post('http://localhost:8082/login', data)
+            $http.post('http://0.0.0.0:8082/login', data)
                 .success(function(data, status, headers, config) {
                     userPersistenceService.setCookieData($scope.editableEmployee.tpxid);
 
                     if(data == "0")
-                    $window.location.href = "http://localhost:8000/#/Level1";
+                    $window.location.href = "http://0.0.0.0:8000/#/Level1";
                     else
                     if(data == "1")
-                        $window.location.href = "http://localhost:8000/#/Level1/sub2";
+                        $window.location.href = "http://0.0.0.0:8000/#/Level1/sub2";
                     else
                     if(data == "2")
-                        $window.location.href = "http://localhost:8000/#/clear";
+                        $window.location.href = "http://0.0.0.0:8000/#/clear";
                     $uibModalInstance.close();
 
                 })
@@ -152,7 +152,7 @@ myApp.controller('rfController',
 
             $scope.logout = function(){
                 userPersistenceService.clearCookieData();
-                $window.location.href = "http://localhost:8000/#/home";
+                $window.location.href = "http://0.0.0.0:8000/#/home";
             }
 
         })
