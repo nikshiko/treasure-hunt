@@ -45,7 +45,7 @@ myApp.controller('level3Controller',function level3Controller($scope,$http,$wind
         if (sub === 7)
             $window.location.href = "/#/Level3/sub1";
        if(sub !=0 && sub !=7)
-        $http.post('https://treasurehuntbackend.retailmetrx.com/login/levels', answerMap)
+        $http.post('https://treasurehuntbackend.retailmetrx.com/levels', answerMap)
             .success(function (data, status, headers, config) {
                if(data == "correct") {
 

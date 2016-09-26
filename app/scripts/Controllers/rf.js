@@ -102,7 +102,7 @@ myApp.controller('rfController',
                 tpxid:$scope.editableEmployee.tpxid,
                 password:$scope.editableEmployee.password,
             };
-            $http.post('http://0.0.0.0:8082/login', data)
+            $http.post('https://treasurehuntbackend.retailmetrx.com/login', data)
                 .success(function(data, status, headers, config) {
                     userPersistenceService.setCookieData($scope.editableEmployee.tpxid);
 
