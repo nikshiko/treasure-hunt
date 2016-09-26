@@ -58,7 +58,9 @@
                     <input  type="password" name="colleaguePasswordConfirmation" class="form-control" id="colleaguePasswordConfirmation" placeholder="Confirm Password" ng-model="editableEmployee.passwordConfirmation" required>
                     <span ng-show="registrationForm.colleaguePasswordConfirmation.$invalid && registrationForm.colleaguePasswordConfirmation.$touched">Password required!</span>
                     <span ng-if="editableEmployee.password!==editableEmployee.passwordConfirmation && editableEmployee.password!=undefined && editableEmployee.passwordConfirmation!=undefined ">Sorry Passwords don't match!</span>
+
                 </div>
+                <span ng-if="registration_status !=null || registration_status!= 'undefined'">{{registration_status}}</span>
             </div>
 
 
@@ -67,8 +69,7 @@
 </div>
 <div class="modal-footer">
     <button class="btn btn-default" type="button" ng-click="cancelForm()">Cancel</button>
-    <button class="btn btn-primary" ng-if="editableEmployee.password===editableEmployee.passwordConfirmation" type="submit" ng-click="submitForm()">Submit</button>
-    <button class="btn btn-primary" ng-if="editableEmployee.password!==editableEmployee.passwordConfirmation"  type="submit" ng-disabled="true" >Submit</button>
+    <button class="btn btn-primary" ng-disabled="editableEmployee.password!==editableEmployee.passwordConfirmation || (!!editableEmployee.name || !!editableEmployee.email || !!editableEmployee.tpxid || !!editableEmployee.empid || !!editableEmployee.password)" gtype="submit" ng-click="submitForm()">Submit</button>
     <button class="btn btn-warning" type="reset" ng-click="resetForm()">Reset</button>
 </div>
 </form>

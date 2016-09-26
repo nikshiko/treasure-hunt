@@ -44,16 +44,15 @@ myApp.controller('rfController',
 
                     })
                     .error(function(data, status, headers, config) {
-                    $window.location.href = "/#/failure";
+                    $scope.registration_status = "Sorry,Issue with a connection.Please try again."
 
                 })
 
 
             })
             .error(function(data, status, headers, config) {
-                $window.location.href = "/#/failure";
 
-
+                $scope.registration_status = "Sorry,Issue with a connection.Please try again."
 
             });
 
@@ -72,8 +71,6 @@ myApp.controller('rfController',
         }
         $scope.resetForm = function(){
             // $window.history.back();
-            form.$setPristine();
-            form.$setUntouched();
 
         }
 
@@ -114,7 +111,23 @@ myApp.controller('rfController',
                     else
                     if(data == "2")
                         $window.location.href = "/#/clear";
+                    else
+                     if(data == "3")
+                         $window.location.href = "/#/Level3"
+                    else
+                      if(data == "4")
+                          $window.location.href = "/#/Level3/sub2"
+                      else
+                      if(data == "5")
+                          $window.location.href = "/#/Level3/sub3"
+                      else
+                      if(data == "6")
+                          $window.location.href = "/#/Level3/sub4"
+                    if(data == "7")
+                        $window.location.href = "/#/Level3/clear"
+
                     $uibModalInstance.close();
+
 
                 })
                 .error(function(data, status, headers, config) {
@@ -139,6 +152,7 @@ myApp.controller('rfController',
         $scope.resetForm = function(){
             // $window.history.back();
         $scope.result ="";$scope.contact = "";
+            userPersistenceService.clearCookieData();
 
         }
 
