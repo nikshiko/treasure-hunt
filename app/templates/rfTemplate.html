@@ -15,7 +15,7 @@
                 <label for="name" class="col-sm-3 control-label">Name:</label>
                 <div class="col-sm-6" >
                     <input type="text" class="form-control" id="name" name="name" aria-describedby="Namehelp" placeholder="Your Name"
-                           ng-model="editableEmployee.name" required />
+                           ng-model="editableEmployee.name" ng-required />
 
 
                 </div>
@@ -24,15 +24,15 @@
                 <label for="colleagueEmail" class="col-sm-3 control-label">Email address:</label>
                 <div class="col-sm-6">
                     <input type="email" class="form-control" name="colleagueEmail" id="colleagueEmail" aria-describedby="emailHelp" placeholder="Enter email"
-                           ng-model="editableEmployee.email" required >
-                    <span ng-show="registrationForm.colleagueEmail.$invalid && registrationForm.colleagueEmail.$touched">Email required!</span>
+                           ng-model="editableEmployee.email" ng-required >
+                    <span ng-show="registrationForm.colleagueEmail.$invalid && registrationForm.colleagueEmail.$touched">Email ng-required!</span>
                 </div>
             </div>
             <div class="form-group"  ng-class="{'has-error':registrationForm.tpxid.$invalid && registrationForm.tpxid.$touched}">
                 <label for="tpxid" class="col-sm-3 control-label">TPX ID:</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" name="tpxid" id="tpxid" aria-describedby="emailHelp" placeholder="Enter TPXID"
-                           ng-model="editableEmployee.tpxid" required >
+                           ng-model="editableEmployee.tpxid" ng-required >
                     <span ng-show="registrationForm.tpxid.$invalid && registrationForm.tpxid.$touched">TPXID required!</span>
                 </div>
             </div>
@@ -40,7 +40,7 @@
                 <label for="empId" class="col-sm-3 control-label">Employee ID</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" name="empId" id="empId"  placeholder="Enter Employee ID"
-                           ng-model="editableEmployee.empid" required >
+                           ng-model="editableEmployee.empid" ng-required >
                     <span ng-show="registrationForm.empId.$invalid && registrationForm.empId.$touched">Employee ID required!</span>
                 </div>
             </div>
@@ -48,28 +48,28 @@
             <div class="form-group"  ng-class="{'has-error':registrationForm.colleaguePassword.$invalid && registrationForm.colleaguePassword.$touched}">
                 <label class="col-sm-3 control-label" for="colleaguePassword">Password</label>
                 <div class="col-sm-6">
-                    <input  type="password" name="colleaguePassword" class="form-control" id="colleaguePassword" placeholder="Password" ng-model="editableEmployee.password" required>
+                    <input  type="password" name="colleaguePassword" class="form-control" id="colleaguePassword" placeholder="Password" ng-model="editableEmployee.password" ng-required>
                     <span ng-show="registrationForm.colleaguePassword.$invalid && registrationForm.colleaguePassword.$touched">Password required!</span>
                 </div>
             </div>
             <div class="form-group"  ng-class="{'has-error':registrationForm.colleaguePasswordConfirmation.$invalid && registrationForm.colleaguePasswordConfirmation.$touched}">
                 <label class="col-sm-3 control-label" for="colleaguePasswordConfirmation">Confirm Password</label>
                 <div class="col-sm-6">
-                    <input  type="password" name="colleaguePasswordConfirmation" class="form-control" id="colleaguePasswordConfirmation" placeholder="Confirm Password" ng-model="editableEmployee.passwordConfirmation" required>
+                    <input  type="password" name="colleaguePasswordConfirmation" class="form-control" id="colleaguePasswordConfirmation" placeholder="Confirm Password" ng-model="editableEmployee.passwordConfirmation" ng-required>
                     <span ng-show="registrationForm.colleaguePasswordConfirmation.$invalid && registrationForm.colleaguePasswordConfirmation.$touched">Password required!</span>
-                    <span ng-if="editableEmployee.password!==editableEmployee.passwordConfirmation && editableEmployee.password!=undefined && editableEmployee.passwordConfirmation!=undefined ">Sorry Passwords don't match!</span>
+                    <span ng-if="editableEmployee.password!==editableEmployee.passwordConfirmation && editableEmployee.password!=undefined && editableEmployee.passwordConfirmation!=undefined && editableEmployee.passwordConfirmation==''">Sorry Passwords don't match!</span>
 
                 </div>
-                <span ng-if="registration_status !=null || registration_status!= 'undefined'">{{registration_status}}</span>
             </div>
 
+            <div style="color:red" ng-if="registration_status !=null || registration_status!= 'undefined' || registration_status!=''">{{registration_status}}</div>
 
         </fieldset>
 
 </div>
 <div class="modal-footer">
     <button class="btn btn-default" type="button" ng-click="cancelForm()">Cancel</button>
-    <button class="btn btn-primary" ng-disabled="editableEmployee.password!==editableEmployee.passwordConfirmation || (!!editableEmployee.name || !!editableEmployee.email || !!editableEmployee.tpxid || !!editableEmployee.empid || !!editableEmployee.password)" gtype="submit" ng-click="submitForm()">Submit</button>
+    <button class="btn btn-primary" gtype="submit" ng-disabled="!((editableEmployee.tpxid != 'undefined' && editableEmployee.tpxid!='' && editableEmployee.tpxid!=null) && (editableEmployee.empid!=null && editableEmployee.empid!='undefined' && editableEmployee.empid!='') && editableEmployee.password === editableEmployee.passwordConfirmation)" ng-click="submitForm()">Submit</button>
     <button class="btn btn-warning" type="reset" ng-click="resetForm()">Reset</button>
 </div>
 </form>

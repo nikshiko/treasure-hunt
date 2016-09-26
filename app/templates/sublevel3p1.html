@@ -49,16 +49,17 @@
 
             <h2 class="gradient" id="question">Question:</h2>
                     <blockquote>
-                    <p>RAEWE CREDX ESIDOV</p>
+                    <p>GTYORJOTEOUIABGT</p>
                     </blockquote>
                     <form>
                         <div class="form-group" ng-controller="level3Controller">
                             <br/><br/>
-                            <label>Enter your answer:</label><!-- -->
-                            <input type="text" class="form-control col-sm-3" id="answer" name="answer" placeholder="Answer" ng-model="answer"><span style="color:red">{{result}}</span>
+                            <label>Enter your answer:</label><span style="color:red">{{result}} </span>
+                            <input type="text" class="form-control col-sm-3" id="answer" name="answer" placeholder="Answer" ng-model="answer">
 
                             <br>
                             <button type="submit" class="btn btn-warning "style="margin-top:1%;"  ng-disabled="isDisabled" ng-click="submitAnswer(3)">Submit</button>
+                            <button  type="button" class="btn btn-info "style="margin-top:1%;"   ng-click="showClue(3)">Hint</button>
 
                         </div>
                     </form>

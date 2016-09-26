@@ -13,9 +13,13 @@ myApp.controller('level3Controller',function level3Controller($scope,$http,$wind
                      break;
             case 2 : sharedProperties.setProperty("CODABAR");
                      break;
-            case 4 : sharedProperties.setProperty(" cipher is a method of encrypting alphabetic text by using a series of different Caesar ciphers based on the letters of a keyword.");
+            case 3 : sharedProperties.setProperty("Begin by grouping the letters into groups of four")
+                     break;
+            case 4 : sharedProperties.setProperty("This cipher is a method of encrypting alphabetic text by using a series of different Caesar ciphers based on the letters of a keyword.");
                     break;
-            case 6: sharedProperties.setProperty("This method is called the Play Fair.");
+            case 5 : sharedProperties.setProperty("Spaces and punctuation marks are considered as letters.")
+                    break;
+            case 6: sharedProperties.setProperty("Play Fair! okay?");
                     break;
 
         }
@@ -26,6 +30,10 @@ myApp.controller('level3Controller',function level3Controller($scope,$http,$wind
         });
     }
     $scope.submitAnswer = function(sub) {
+       if(sub == 3) {
+           $scope.answer = $scope.answer.replace(/ /g, '');
+       }
+
         if($scope.answer !== undefined) {
             var answerMap = {
                 ques: sub,

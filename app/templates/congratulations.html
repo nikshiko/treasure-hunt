@@ -1,12 +1,12 @@
-<div class="container" ng-if="levelcheck == 'default'">
-    <h1 style="color:green">Congratulations!!!</h1>
-    <div class="alert alert-success fade in">
-        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-        <strong>YOU have completed all challenges in this level.You will be notified when the next level opens up. </strong>
-    </div><div><a href="/#/home"><button type="button" class="btn btn-group warning" >Ok</button></a></div>
-</div>
+<!--<div class="container" ng-if="levelcheck!=='level1pass'" ng-controller="level3Controller" >-->
+    <!--<h1 style="color:green">Congratulations!!!</h1>-->
+    <!--<div class="alert alert-success fade in">-->
+        <!--<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>-->
+        <!--<strong>YOU have completed all challenges in this level.You will be notified when the next level opens up. </strong>-->
+    <!--</div><div><a href="/#/home"><button type="button" class="btn btn-group warning" >Home</button></a></div>-->
+<!--</div>-->
 
-<div class="container" ng-if="levelCheck == 'level1pass'" ng-controller="level3Controller">
+<div class="container" ng-if="levelCheck != 'level1pass'" ng-controller="level3Controller">
     <h1 style="color:green">Congratulations!!!</h1>
     <div class="alert alert-success fade in">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>

@@ -4,7 +4,7 @@
 
 myApp.controller('rfController',
     function rfController($scope,$http,$window,$uibModalInstance,DataService){
-
+        $scope.registration_status = "";
 
         $scope.submitForm = function(){
 
@@ -23,7 +23,8 @@ myApp.controller('rfController',
                 tpxid:$scope.editableEmployee.tpxid,
                 password:$scope.editableEmployee.password
             };
-            $http.post('https://treasurehuntbackend.retailmetrx.com/reg/check', data)
+            //$http.post('https://treasurehuntbackend.retailmetrx.com/reg/check', data)
+            $http.post('http://localhost:8082/reg/check', data)
             .success(function(data, status, headers, config) {
                 var data = {
                     name:$scope.editableEmployee.name,
@@ -33,18 +34,22 @@ myApp.controller('rfController',
                     password:$scope.editableEmployee.password
                 };
 
-                $http.post('https://treasurehuntbackend.retailmetrx.com/reg/put', data)
+                $http.post('http://localhost:8082/reg/put', data)
 
                     .success(function(data, status, headers, config) {
                         if(data == "exists")
                         $window.location.href = "/#/failure";
                         else if(data == "registered")
                             $window.location.href = "/#/success";
+                        else
+                            $scope.registration_status = "You haven't completed your form!"
+
+                        $uibModalInstance.close();
 
 
                     })
                     .error(function(data, status, headers, config) {
-                    $scope.registration_status = "Sorry,Issue with a connection.Please try again."
+                    $scope.registration_status = "Sorry,Issue with a connection.Please try again. "
 
                 })
 
@@ -62,7 +67,7 @@ myApp.controller('rfController',
                 return ;
 */
 
-            $uibModalInstance.close();
+
 
         }
         $scope.cancelForm = function(){
@@ -70,7 +75,14 @@ myApp.controller('rfController',
             $uibModalInstance.close();
         }
         $scope.resetForm = function(){
+            $scope.registration_status = "";
             // $window.history.back();
+            $scope.editableEmployee.name = '';
+                $scope.editableEmployee.email ='';
+                $scope.editableEmployee.empid = '';
+                $scope.editableEmployee.tpxid = '';
+                $scope.editableEmployee.password = '';
+                $scope.editableEmployee.passwordConfirmation=='';
 
         }
 
@@ -99,7 +111,8 @@ myApp.controller('rfController',
                 tpxid:$scope.editableEmployee.tpxid,
                 password:$scope.editableEmployee.password,
             };
-            $http.post('https://treasurehuntbackend.retailmetrx.com/login', data)
+            //$http.post('https://treasurehuntbackend.retailmetrx.com/login', data)
+            $http.post('http://localhost:8082/login', data)
                 .success(function(data, status, headers, config) {
                     userPersistenceService.setCookieData($scope.editableEmployee.tpxid);
 
@@ -123,9 +136,10 @@ myApp.controller('rfController',
                       else
                       if(data == "6")
                           $window.location.href = "/#/Level3/sub4"
-                    if(data == "7")
-                        $window.location.href = "/#/Level3/clear"
+                    if(data == "7") {
 
+                        $window.location.href = "/#/Level3/clear"
+                    }
                     $uibModalInstance.close();
 
 

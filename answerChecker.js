@@ -2,10 +2,10 @@
 var allAnswers = {
   1: "norman joseph woodland",
   2: "a55a",
-  3: "answer2",
-  4: "answer3",
+  3: "greatjobyougotit",
+  4: "orange",
   5: "answer4",
-  6: "answer5"
+  6: "hamlet"
 };
 exports.check = function(qno, answer){
   if(allAnswers[qno]==answer){

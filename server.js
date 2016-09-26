@@ -22,9 +22,9 @@ app.listen(port,function(req,res)
     console.log('server started');
 });
 app.use(bodyParser.urlencoded({ extended: true }));
-mongoose.connect('mongodb://0.0.0.0/logindb');
+mongoose.connect('mongodb://admin:abc123@localhost:27017/logindb');
 app.post('/levels', function(req, res){
-    console.log('here')
+    console.log('here')/
     console.log(req.body.answer+req.body.ques);
     if(req.body.tpxid==null){
         res.send("login");
