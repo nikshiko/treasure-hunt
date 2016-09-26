@@ -36,7 +36,11 @@ myApp.controller('rfController',
                 $http.post('http://localhost:8082/reg/put', data)
 
                     .success(function(data, status, headers, config) {
-                        $window.location.href = "http://localhost:8000/#/success";
+                        if(data == "exists")
+                        $window.location.href = "http://localhost:8000/#/failure";
+                        else if(data == "registered")
+                            $window.location.href = "http://localhost:8000/#/success";
+
 
                     })
                     .error(function(data, status, headers, config) {
