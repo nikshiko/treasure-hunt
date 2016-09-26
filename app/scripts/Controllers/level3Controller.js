@@ -41,34 +41,34 @@ myApp.controller('level3Controller',function level3Controller($scope,$http,$wind
             }
         };
         if (sub === 0)
-            $window.location.href = "http://52.208.32.211:8000/#/Level1/sub1";
+            $window.location.href = "http://0.0.0.0:8000/#/Level1/sub1";
         if (sub === 7)
-            $window.location.href = "http://52.208.32.211:8000/#/Level3/sub1";
+            $window.location.href = "http://0.0.0.0:8000/#/Level3/sub1";
        if(sub !=0 && sub !=7)
-        $http.post('http://52.208.32.211:8082/levels', answerMap)
+        $http.post('http://0.0.0.0:8082/levels', answerMap)
             .success(function (data, status, headers, config) {
                if(data == "correct") {
 
                    if (sub === 1)
-                       $window.location.href = "http://52.208.32.211:8000/#/Level1/sub2";
+                       $window.location.href = "http://0.0.0.0:8000/#/Level1/sub2";
 
                    if (sub === 2) {
-                       $window.location.href = "http://52.208.32.211:8000/#/clear";
+                       $window.location.href = "http://0.0.0.0:8000/#/clear";
 
                    }
                    if (sub === 3)
-                       $window.location.href = "http://52.208.32.211:8000/#/Level3/sub2";
+                       $window.location.href = "http://0.0.0.0:8000/#/Level3/sub2";
 
                    if (sub === 4)
-                       $window.location.href = "http://52.208.32.211:8000/#/Level3/sub3";
+                       $window.location.href = "http://0.0.0.0:8000/#/Level3/sub3";
 
                    if (sub === 5)
-                       $window.location.href = "http://52.208.32.211:8000/#/Level3/sub4";
+                       $window.location.href = "http://0.0.0.0:8000/#/Level3/sub4";
 
                    if (sub === 6)
-                       $window.location.href = "http://52.208.32.211:8000/#/clear";
+                       $window.location.href = "http://0.0.0.0:8000/#/clear";
                    if (sub == 7)
-                       $window.location.href = "http://52.208.32.211:8000/#/Level3/sub1"
+                       $window.location.href = "http://0.0.0.0:8000/#/Level3/sub1"
                }
                else if(data == "wrong")
                {
@@ -76,7 +76,7 @@ myApp.controller('level3Controller',function level3Controller($scope,$http,$wind
                }
                else if(data == "login")
                {
-                   $window.location.href = "http://52.208.32.211:8000/#/home";
+                   $window.location.href = "http://0.0.0.0:8000/#/home";
                }
 
 

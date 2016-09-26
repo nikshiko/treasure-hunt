@@ -9,7 +9,7 @@ app.use(bodyParser.json()); // support json encoded bodies
 app.use(cors());//for solving no access origin
 app.use(bodyParser.urlencoded({ extended: true }));// support encoded bodies
 app.post('/login', function(req, res) {
-	mongoose.connect('mongodb://52.208.32.211/logindb');
+	mongoose.connect('mongodb://0.0.0.0/logindb');
     	User.findOne({'tpxid' : req.body.tpxid, 'password' : req.body.password}, function(err, users){
 	if(users==null){
 	mongoose.connection.close();

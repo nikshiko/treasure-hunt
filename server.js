@@ -13,9 +13,9 @@ var Colleague = require('./Colleague');
 //app.use(session({secret: 'yolo123'}));
 app.use(bodyParser.json());
 app.use(cors());
-app.listen(port,"52.208.32.211");
+app.listen(port,"0.0.0.0");
 app.use(bodyParser.urlencoded({ extended: true }));
-mongoose.connect('mongodb://52.208.32.211/logindb');
+mongoose.connect('mongodb://0.0.0.0/logindb');
 app.post('/levels', function(req, res){
     console.log('here')
     console.log(req.body.answer+req.body.ques);

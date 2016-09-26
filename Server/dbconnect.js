@@ -19,7 +19,7 @@ app.post('/reg/put', function(req, res) {
     var postpassword = req.body.password;
     console.log(postpxid);
     //console.log(postempid);
-    mongoose.connect('mongodb://52.208.32.211/logindb');
+    mongoose.connect('mongodb://0.0.0.0/logindb');
     var jondoe =new User({
       name: postname,
       tpxid: postpxid,
@@ -36,7 +36,7 @@ app.post('/reg/put', function(req, res) {
 
 
 app.post('/reg/check', function(req, res) {
-mongoose.connect('mongodb://52.208.32.211/logindb');
+mongoose.connect('mongodb://0.0.0.0/logindb');
 Colleague.findOne({'empid' : req.body.empid }, function(err, colleagues) {
   if (colleagues==null){
     console.log(colleagues);
